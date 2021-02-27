@@ -1,4 +1,4 @@
-html    {
+html {
     box-sizing: border-box;
 }
 
@@ -12,9 +12,7 @@ body {
     font-size: 16px;
 }
 
-html, 
-body,
-.wrapper {
+html, body, .wrapper {
     height: 100%;
 }
 
@@ -45,13 +43,20 @@ p {
     flex: 1;
 }
 
-.header,
-.footer {
+.header, .footer {
     flex-shrink: 0;
+}
+
+.header-bg{
+    background-color: #F8F6F7;
 }
 
 .section {
     padding: 50px 0;
+}
+
+.section-bg{
+    background-color: #F8F6F7;
 }
 
 .about-link {
@@ -59,13 +64,41 @@ p {
     font-weight: 400;
 }
 
+.about-video {
+    text-align: right;
+}
+
 .pad-16 {
     padding-bottom: 16px;
 }
- .lh-26 {
-     line-height: 26px;
- }
 
- .right-align {
+.pad-8 {
+    padding-bottom: 8px;
+}
+
+.lh-26 {
+    line-height: 26px;
+}
+
+.footer-text {
+    font-size: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-nav {
     text-align: right;
- }
+    padding-top: 32px;
+    padding-bottom: 31px;
+}
+
+.navstyle {
+    padding-left: 28px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navstyle-mini {
+    font-size: 12px;
+}
