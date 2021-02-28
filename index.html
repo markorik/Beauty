@@ -8,37 +8,71 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
     <title>Мир красоты</title>
 </head>
 
 <body>
     <div class="wrapper">
         <!-- Шапка -->
-        <header class="header header-bg">
-            <div class="container">
+        <header class="header">
+            <div class="header-top">
+                <p class="header-world">
+                    Мир красоты
+                </p>
                 <nav>
                     <a class="navstyle" href="/">Услуги и цены</a>
                     <a class="navstyle" href="/">Мастера</a>
                     <a class="navstyle" href="/">Наши работы</a>
                     <a class="navstyle" href="/">Контакты</a>
                 </nav>
+                <div class="header-info">
+                    <p class="header-phone">
+                        8 (499) 686-17-62
+                    </p>
+                    <p class="header-shedule">
+                        с 10.00 до 19.00 без выходных
+                    </p>
+                </div>
+            </div>
+            <div class="header-hero">
+                <div class="header-look">
+                    <p class="header-looktxt">
+                        Создай свой образ вместе с нами
+                    </p>
+                    <p class="header-looktxt-small">
+                        Идеальный образ за 60 минут
+                    </p>
+                    <button class="btn btn-large">
+                        Записаться онлайн
+                    </button>
+                </div>
+                <div class="header-girl">
+                    <img src="/images/header-girl.png" alt="">
+                </div>
+                <ul class="social">
+                    <li><a href="https://vk.com/"><img src="/images/social-vk.svg" alt="vk"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="/images/social-insta.svg" alt="instagram"></a>
+                    </li>
+                    <li><a href="https://www.youtube.com/"><img src="/images/social-yotube.svg" alt="youtube"></a></li>
+                </ul>
             </div>
         </header>
+
         <main class="main">
             <!-- секция О салоне -->
-            <section class="section">
+            <section class="section section-about">
                 <div class="container">
                     <h2>О салоне</h2>
                     <div class="row">
                         <div class="col-sm">
-                            <h3 class="pad-16">
+                            <h3 class="about-title">
                                 Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные
                                 визажисты, стилисты и мастера татуажа
                             </h3>
-                            <p class="pad-16 lh-26">
+                            <p class="about-p">
                                 Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где
                                 гармония обретает форму,
                                 а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших
@@ -48,7 +82,7 @@
                             <a class="about-link" href="/">Развернуть</a>
                         </div>
                         <div class="col-sm about-video">
-                            <img src="about-video.jpg" alt="">
+                            <img src="images/about-video.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -61,12 +95,13 @@
                 </div>
             </section>
         </main>
+
         <!-- Футер -->
         <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-sm footer-text">
-                        <p class="pad-8">
+                        <p>
                             © 2020 «Море красоты»
                         </p>
                         <a href="/">Политика конфиденциальности</a>
@@ -80,9 +115,8 @@
                         </nav>
                     </div>
                 </div>
-
             </div>
         </footer>
+        
     </div>
-
 </body>
