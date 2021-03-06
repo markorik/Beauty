@@ -57,7 +57,8 @@ a {
 }
 
 /* ссылки в навигации */
-.nav-style a{
+
+.nav-style a {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -76,12 +77,14 @@ a {
 }
 
 /* навигация в футере */
-.nav-style-mini a{
+
+.nav-style-mini a {
     font-size: 12px;
     font-weight: 400;
 }
 
 /* кнопка */
+
 .btn {
     font-family: 'Montserrat';
     font-size: 12px;
@@ -101,6 +104,7 @@ a {
 }
 
 /* большая кнопка */
+
 .btn-large {
     height: 48px;
     width: 203px;
@@ -109,6 +113,7 @@ a {
 }
 
 /* соцсети */
+
 .social {
     text-decoration: none;
     list-style-type: none;
@@ -121,6 +126,7 @@ a {
 }
 
 /* стили для шапки */
+
 .header {
     background-color: #F8F6F7;
     background-image: url(/images/background.png);
@@ -223,12 +229,13 @@ a {
 }
 
 /* стили для основного контента */
+
 .section {
     padding: 50px 0;
 }
 
 .section-about {
-    padding-top: 100px;
+    padding: 100px 0;
 }
 
 .section-bg {
@@ -255,6 +262,7 @@ a {
 }
 
 /* блок с видео и его затемнение */
+
 .about-video-img {
     height: 295px;
     background-position: right;
@@ -274,7 +282,7 @@ a {
     left: 0;
     right: 0;
     background-color: black;
-    opacity: 0;  
+    opacity: 0;
     transition: 0.2s opacity;
     z-index: 1;
 }
@@ -289,13 +297,37 @@ a {
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     width: 100%;
-    align-items: center;  
+    align-items: center;
     z-index: 2;
 }
 
+.about-pic {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.about-pic-item {
+    text-align: center;
+}
+
+.about-pic-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.about-pic-item p {
+    font-size: 14px;
+    line-height: 22px;
+    padding: 0px 27px;
+}
+
 /* стили для футера */
+
 .footer p {
     padding-bottom: 8px;
 }
