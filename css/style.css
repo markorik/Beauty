@@ -18,16 +18,17 @@ html, body, .wrapper {
 
 h2 {
     font-size: 48px;
-    font-weight: 700;
-    margin: 0;
-    padding-bottom: 32px;
+    font-weight: 700;   
 }
 
 h3 {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 32px;
-    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 600;
 }
 
 p {
@@ -52,40 +53,10 @@ a {
     flex-shrink: 0;
 }
 
-.container {
-    padding: 0px;
-}
-
-/* ссылки в навигации */
-
-.nav-style a {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.nav-style a:visited {
-    color: #333333;
-}
-
-.nav-style a:hover {
-    color: #00BF78;
-}
-
-.nav-style a:not(:first-child) {
-    margin-left: 28px;
-}
-
-/* навигация в футере */
-
-.nav-style-mini a {
-    font-size: 12px;
-    font-weight: 400;
-}
-
 /* кнопка */
-
 .btn {
+    height: 34px;
+    width: 112px;
     font-family: 'Montserrat';
     font-size: 12px;
     font-weight: 500;
@@ -96,15 +67,14 @@ a {
     outline: none;
     border-radius: 17px;
     cursor: url('/images/pointer.svg'), pointer;
-    transition: 0.3s opacity;
+    transition: 0.1s transform;
 }
 
 .btn:hover {
-    opacity: 0.7;
+    transform: scale(1.04);
 }
 
 /* большая кнопка */
-
 .btn-large {
     height: 48px;
     width: 203px;
@@ -112,8 +82,59 @@ a {
     border-radius: 24px;
 }
 
-/* соцсети */
+/* телефон и режим работы */
+.info {
+    line-height: 14px;
+    text-align: right;
+}
 
+.info__phone {
+    font-size: 18px;
+    font-weight: 500;
+    
+    padding-bottom: 8px;
+}
+
+.info__shedule {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+/* логотип */
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #333333;
+}
+
+/* навигация и прайс */
+.nav a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.nav a:visited {
+    color: #333333;
+}
+
+.nav a:hover {
+    color: #00BF78;
+}
+
+/* навигация в футере */
+.nav-mini a {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* соцсети */
 .social {
     text-decoration: none;
     list-style-type: none;
@@ -121,149 +142,127 @@ a {
     padding: 0;
 }
 
-.social a:hover {
-    opacity: 0.7;
+.social a img:hover {
+    transform: scale(1.2);
 }
 
 /* стили для шапки */
-
 .header {
     background-color: #F8F6F7;
-    background-image: url(/images/background.png);
+    background-image: url('/images/background.png');
 }
 
-.header-top, .header-hero {
+.header__top, .header__content {
     display: flex;
-    max-width: 1140px;
-    margin-left: auto;
-    margin-right: auto;
     justify-content: space-between;
 }
 
-.header-top {
-    padding-top: 30px;
+.header__top {
+    margin-top: 30px;
+    margin-bottom: 120px;
 }
 
-.header-hero {
+.header__nav a:not(:first-child) {
+    margin-left: 28px;
+}
+
+.header__content {
     align-items: center;
+    padding-bottom: 130px;
+    position: relative;
 }
 
-.header-world {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.header-phone {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 14px;
-    text-align: right;
-    padding-bottom: 8px;
-}
-
-.header-shedule {
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 14px;
-    text-align: right;
-}
-
-.header-nav {
-    align-content: space-between;
-}
-
-.header-look {
+.header__slogan {
     max-width: 486px;
     vertical-align: middle;
+    z-index: 2;
 }
 
-.header-looktxt {
+.header__ttl {
     font-size: 48px;
     font-weight: 600;
-    padding-bottom: 16px;
+    margin-bottom: 16px;
 }
 
-.header-looktxt-small {
+.header__txt {
     font-size: 20px;
     font-weight: 400;
-    padding-bottom: 60px;
+    margin-bottom: 60px;
 }
 
-.header-girl {
-    max-width: 524px;
-    position: relative;
+.header__img {
+    position: absolute;
     bottom: 0;
+    right: 90px;  
+    z-index: 1; 
     overflow: hidden;
-    min-width: 524px;
-    margin-right: 90px;
 }
 
-.header-girl:before {
+.header__img img {  
+    display: block;
+    position: relative;
+}
+
+.header__img:before {
     content: '';
     width: 472px;
     height: 472px;
     background-color: #FB9475;
     border-radius: 50%;
+    position: absolute;
+    z-index: 0;
     bottom: -110px;
     right: 0;
-    z-index: 0;
-    max-width: 524px;
-    position: absolute;
 }
 
-.header-girl img {
-    z-index: 1;
-    position: relative;
-    display: block;
-}
-
-.header-hero .social {
+.header__social {
     display: flex;
     flex-direction: column;
     justify-content: center;
     transform: translateY(-25%);
 }
 
-.header-hero .social li:not(:last-child) {
-    padding-bottom: 16px;
+.header__social li:not(:last-child) {
+    margin-bottom: 16px;
 }
 
 /* стили для основного контента */
-
 .section {
-    padding: 50px 0;
+    padding: 50px 0 50px 0;
 }
 
-.section-about {
-    padding: 100px 0;
-}
-
-.section-bg {
-    background-color: #F8F6F7;
-}
-
+/* О салоне */
 .about {
-    display: flex;
+    padding-top: 100px;
+}
+
+.about__title {
+    margin: 0 0 32px 0; 
+}
+
+.about__top {
     justify-content: space-between;
 }
 
-.about-title {
-    padding-bottom: 16px;
+.about__ttl {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0 0 16px 0;
 }
 
-.about-p {
+.about__txt {
     padding-bottom: 16px;
     line-height: 26px;
 }
 
-.about-link {
+.about__link {
     font-size: 14px;
     font-weight: 400;
 }
 
-/* блок с видео и его затемнение */
-
-.about-video-img {
+/* блок с видео "О салоне" и его затемнение */
+.about__video {
     height: 295px;
     background-position: right;
     background-repeat: no-repeat;
@@ -274,7 +273,7 @@ a {
     display: flex;
 }
 
-.about-video-img:before {
+.about__video:before {
     content: '';
     position: absolute;
     top: 0;
@@ -287,11 +286,11 @@ a {
     z-index: 1;
 }
 
-.about-video-img:hover:before {
+.about__video:hover:before {
     opacity: 20%;
 }
 
-.about-video-top {
+.about__label {
     font-weight: 500;
     line-height: 26px;
     color: white;
@@ -303,43 +302,219 @@ a {
     z-index: 2;
 }
 
-.about-pic {
-    display: flex;
+.about__bottom {
     justify-content: space-around;
     margin-top: 100px;
 }
 
-.about-pic-item {
+.item {
     text-align: center;
 }
 
-.about-pic-item h4 {
-    font-size: 18px;
-    font-weight: 600;
+.item h4 { 
     margin-top: 28px;
     margin-bottom: 12px;
 }
 
-.about-pic-item p {
+.item p {
     font-size: 14px;
     line-height: 22px;
     padding: 0px 27px;
 }
 
-/* стили для футера */
-
-.footer p {
-    padding-bottom: 8px;
+/* Популярные услуги */
+.popular {
+    padding-bottom: 2px;
 }
 
-.footer-text {
+.popular__title {
+    margin: 0 0 35px 0;
+}
+
+.popular__card {
+    margin: 0 0 48px 0;    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+.card__img {
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+}
+
+.card__body {
+    padding: 15px 0 0 0;
+}
+
+.card__ttl {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.card__txt {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 0 16px 0;
+}
+
+/* Услуги и цены */
+.price {
+    padding-bottom: 100px;
+}
+
+.price__title {
+    margin: 0 0 32px 0;
+}
+
+.price__tabs {
+    text-decoration: none;
+    margin-bottom: 21px;
+}
+
+.price__tabs a:not(:first-child) {
+    margin-left: 28px;
+}
+
+.price__service {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 32px;
+}
+
+.price__comment {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+.price__price {
+    font-size: 20px;
+    font-weight: 600; 
+    color: #00BF78;   
+    margin-top: 32px;
+
+}
+
+/* Мастера */
+.masters {
+    background-color: #F8F6F7;
+    padding-top: 80px;
+}
+
+.masters__title {
+    margin: 0 0 32px 0;
+}
+
+.masters__text {
+    margin-bottom: 24px;
+}
+
+.master-card__photo {
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;   
+}
+
+.master-card__photo:before {
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: black;
+    opacity: 0;
+    transition: 0.2ms;
+    z-index: 1;
+}
+.master-card__photo:hover:before {
+    opacity: 0.5;
+    cursor: url('/images/pointer.svg'), pointer;
+    
+}
+
+.master-card__photo:after {
+    content: 'Записаться к мастеру';
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    max-width: 90px; 
+    opacity: 0;
+    z-index: 2;
+}
+
+.master-card__photo:hover:after {
+    opacity: 1;
+    cursor: url('/images/pointer.svg'), pointer;
+}
+
+.master-card__name {
+    margin: 20px 0 8px 0;
+}
+
+.master-card__prof {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.master-card__exp {
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+/* Контакты */
+.contacts {
+    padding-top: 78px;
+    background-color: #F8F6F7;
+}
+
+/* стили для футера */
+.footer__row {
+    justify-content: space-around;
+}
+
+.footer__text {
     font-size: 12px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.footer-nav {
+.footer__text p {
+    padding-bottom: 8px;
+}
+
+.footer__nav {
     text-align: right;
     padding-top: 32px;
     padding-bottom: 31px;
+}
+
+.footer__nav a:not(:first-child) {
+    margin-left: 28px;
 }
