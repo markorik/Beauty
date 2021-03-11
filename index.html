@@ -21,13 +21,13 @@
             <div class="container">
                 <div class="header__top">
                     <div class="header__logo logo">
-                        <a href="/">Мир красоты</a>
+                        <a class="logo__link" href="/">Мир красоты</a>
                     </div>
                     <nav class="header__nav nav">
-                        <a href="#price">Услуги и цены</a>
-                        <a href="#masters">Мастера</a>
-                        <a href="#projects">Наши работы</a>
-                        <a href="#contacts">Контакты</a>
+                        <a class="header__link nav__link" href="#price">Услуги и цены</a>
+                        <a class="header__link nav__link" href="#masters">Мастера</a>
+                        <a class="header__link nav__link" href="#projects">Наши работы</a>
+                        <a class="header__link nav__link" href="#contacts">Контакты</a>
                     </nav>
                     <div class="header__info info">
                         <p class="info__phone">
@@ -40,24 +40,26 @@
                 </div>
                 <div class="header__content">
                     <div class="header__slogan">
-                        <p class="header__ttl">
+                        <p class="header__caption">
                             Создай свой образ вместе с нами
                         </p>
-                        <p class="header__txt">
+                        <p class="header__text">
                             Идеальный образ за 60 минут
                         </p>
-                        <button class="header__btn btn btn-large">
+                        <button class="header__btn btn btn_large">
                             Записаться онлайн
                         </button>
                     </div>
-                    <div class="header__img">
-                        <img src="/images/header-girl.png" alt="">
+                    <div class="header__image">
+                        <img class="header__img" src="/images/header-girl.png" alt="">
                     </div>
                     <ul class="header__social social">
-                        <li><a href="https://vk.com/"><img src="/images/social-vk.svg" alt="vk"></a></li>
-                        <li><a href="https://www.instagram.com/"><img src="/images/social-insta.svg"
-                                    alt="instagram"></a></li>
-                        <li><a href="https://www.youtube.com/"><img src="/images/social-yotube.svg" alt="youtube"></a>
+                        <li class="header__li"><a href="https://vk.com/"><img class="social__icon"
+                                    src="/images/social-vk.svg" alt="vk"></a></li>
+                        <li class="header__li"><a href="https://www.instagram.com/"><img class="social__icon"
+                                    src="/images/social-insta.svg" alt="instagram"></a></li>
+                        <li class="header__li"><a href="https://www.youtube.com/"><img class="social__icon"
+                                    src="/images/social-yotube.svg" alt="youtube"></a>
                         </li>
                     </ul>
                 </div>
@@ -71,11 +73,11 @@
                     <h2 class="about__title">О салоне</h2>
                     <div class="row about__top">
                         <div class="col-6">
-                            <div class="about__ttl">
+                            <div class="about__caption">
                                 Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные
                                 визажисты, стилисты и мастера татуажа
                             </div>
-                            <p class="about__txt">
+                            <p class="about__text">
                                 Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где
                                 гармония обретает форму,
                                 а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших
@@ -98,29 +100,29 @@
                     <div class="row about__bottom">
                         <div class="col-4 about__item item">
                             <img src="/images/plus-cabinet.svg" alt="">
-                            <h4>
+                            <h4 class="item__title">
                                 Удобные кабинеты
                             </h4>
-                            <p>
+                            <p class="item__text">
                                 Комфорт и стиль - принцип создания кабинетов салона красоты. Только эстетика и удобство
                                 для Вас
                             </p>
                         </div>
                         <div class="col-4 about__item item">
                             <img src="/images/plus-cosmetic.svg" alt="">
-                            <h4>
+                            <h4 class="item__title">
                                 Качественная косметика
                             </h4>
-                            <p>
+                            <p class="item__text">
                                 Используем профессиональные материалы высшего качества лучших брендов
                             </p>
                         </div>
                         <div class="col-4 about__item item">
                             <img src="/images/plus-master.svg" alt="">
-                            <h4>
+                            <h4 class="item__title">
                                 Опытные мастера
                             </h4>
-                            <p>
+                            <p class="item__text">
                                 Работают только опытные мастера с чувством стиля. Смотрите наших специалистов в разделе
                                 Мастера
                             </p>
@@ -136,54 +138,55 @@
                     </h3>
                     <div class="row">
                         <div class="col-4 popular__card card">
-                            <div class="card__img">
-                                <img src="/images/service.jpg" alt="">
+                            <div class="card__image">
+                                <img class="card__img" src="/images/service.jpg" alt="">
                             </div>
                             <div class="card__body">
-                                <div class="card__ttl">Маникюр</div>
-                                <div class="card__txt">Аппаратный, комбинированный или классический.</div>
+                                <div class="card__caption">Маникюр</div>
+                                <div class="card__text">Аппаратный, комбинированный или классический.</div>
                             </div>
                             <button class="card__btn btn">Записаться</button>
                         </div>
                         <div class="col-4 popular__card card">
-                            <div class="card__img">
-                                <img src="/images/service.jpg" alt="">
+                            <div class="card__image">
+                                <img class="card__img" src="/images/service.jpg" alt="">
                             </div>
                             <div class="card__body">
-                                <div class="card__ttl">Покрытие гель-лак</div>
-                                <div class="card__txt">Гель-лак наносится в несколько слоев с использование базы и топа.
+                                <div class="card__caption">Покрытие гель-лак</div>
+                                <div class="card__text">Гель-лак наносится в несколько слоев с использование базы и
+                                    топа.
                                     Каждый слой полимеризуется в LED-лампе.</div>
                             </div>
                             <button class="card__btn btn">Записаться</button>
                         </div>
                         <div class="col-4 popular__card card">
-                            <div class="card__img">
-                                <img src="/images/service.jpg" alt="">
+                            <div class="card__image">
+                                <img class="card__img" src="/images/service.jpg" alt="">
                             </div>
                             <div class="card__body">
-                                <div class="card__ttl">Бразильский маникюр</div>
-                                <div class="card__txt">Выполняется в одноразовых перчатках наполненных увлажняющим
+                                <div class="card__caption">Бразильский маникюр</div>
+                                <div class="card__text">Выполняется в одноразовых перчатках наполненных увлажняющим
                                     лосьоном.</div>
                             </div>
                             <button class="card__btn btn">Записаться</button>
                         </div>
                         <div class="col-4 popular__card card">
-                            <div class="card__img">
-                                <img src="/images/service.jpg" alt="">
+                            <div class="card__image">
+                                <img class="card__img" src="/images/service.jpg" alt="">
                             </div>
                             <div class="card__body">
-                                <div class="card__ttl">Педикюр</div>
-                                <div class="card__txt">Аппаратный, комбинированный или классический.</div>
+                                <div class="card__caption">Педикюр</div>
+                                <div class="card__text">Аппаратный, комбинированный или классический.</div>
                             </div>
                             <button class="card__btn btn">Записаться</button>
                         </div>
                         <div class="col-4 popular__card card">
-                            <div class="card__img">
-                                <img src="/images/service.jpg" alt="">
+                            <div class="card__image">
+                                <img class="card__img" src="/images/service.jpg" alt="">
                             </div>
                             <div class="card__body">
-                                <div class="card__ttl">Парафинотерапия</div>
-                                <div class="card__txt">Благодаря этой процедуре увлажнение кожи увеличивается на 80%,
+                                <div class="card__caption">Парафинотерапия</div>
+                                <div class="card__text">Благодаря этой процедуре увлажнение кожи увеличивается на 80%,
                                     также выводит токсины и укрепляет суставы.
                                 </div>
                             </div>
@@ -197,12 +200,12 @@
                 <div class="container">
                     <h2 class="price__title">Услуги и цены</h2>
                     <nav class="price__tabs nav">
-                        <a href="#tab_01">Стрижка и укладка</a>
-                        <a href="#tab_02">Косметология</a>
-                        <a href="#tab_03">Маникюр и педикюр</a>
-                        <a href="#tab_04">Макияж</a>
-                        <a href="#tab_05">Брови и ресницы</a>
-                        <a href="#tab_06">Массаж</a>
+                        <a class="price__section nav__link" href="#tab_01">Стрижка и укладка</a>
+                        <a class="price__section nav__link" href="#tab_02">Косметология</a>
+                        <a class="price__section nav__link" href="#tab_03">Маникюр и педикюр</a>
+                        <a class="price__section nav__link" href="#tab_04">Макияж</a>
+                        <a class="price__section nav__link" href="#tab_05">Брови и ресницы</a>
+                        <a class="price__section nav__link" href="#tab_06">Массаж</a>
                     </nav>
                     <div class="price__content">
                         <div class="row">
@@ -274,17 +277,19 @@
                     <div class="row">
                         <div class="col-3">
                             <div class="masters__profile master-card">
-                                <div class="master-card__photo" style="background-image: url('/images/master-Irina.jpg');"></div>                    
+                                <div class="master-card__photo"
+                                    style="background-image: url('/images/master-Irina.jpg');"></div>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Краснова Ирина</h4>
                                     <p class="master-card__prof">Мастер ногтевого сервиса</p>
-                                    <p class="master-card__exp">Опыт работы 5 лет</p>   
+                                    <p class="master-card__exp">Опыт работы 5 лет</p>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                         <div class="col-3">
                             <div class="masters__profile master-card">
-                                <div class="master-card__photo" style="background-image: url('/images/master-Janna.jpg');"></div>
+                                <div class="master-card__photo"
+                                    style="background-image: url('/images/master-Janna.jpg');"></div>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Калилова Жанна</h4>
                                     <p class="master-card__prof">Визажист-стилист</p>
@@ -294,7 +299,8 @@
                         </div>
                         <div class="col-3">
                             <div class="masters__profile master-card">
-                                <div class="master-card__photo" style="background-image: url('/images/master-Alina.jpg');"></div>
+                                <div class="master-card__photo"
+                                    style="background-image: url('/images/master-Alina.jpg');"></div>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Киселева Алина</h4>
                                     <p class="master-card__prof">Парикмахер</p>
@@ -304,13 +310,14 @@
                         </div>
                         <div class="col-3">
                             <div class="masters__profile master-card">
-                                <div class="master-card__photo" style="background-image: url('/images/master-Elena.jpg');"></div>
+                                <div class="master-card__photo"
+                                    style="background-image: url('/images/master-Elena.jpg');"></div>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Иванова Елена</h4>
                                     <p class="master-card__prof">Мастер ногтевого сервиса</p>
                                     <p class="master-card__exp">Опыт работы 5 лет</p>
                                 </div>
-                            </div>    
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -329,17 +336,17 @@
             <div class="container">
                 <div class="row footer__row">
                     <div class="col footer__text">
-                        <p>
+                        <p class="footer__copyright">
                             © 2020 «Море красоты»
                         </p>
                         <a href="/">Политика конфиденциальности</a>
                     </div>
                     <div class="col">
-                        <nav class="footer__nav nav nav-mini">
-                            <a href="#price">Услуги и цены</a>
-                            <a href="#masters">Мастера</a>
-                            <a href="#projects">Наши работы</a>
-                            <a href="#contacts">Контакты</a>
+                        <nav class="footer__nav nav">
+                            <a class="footer__link nav__link nav__link_mini" href="#price">Услуги и цены</a>
+                            <a class="footer__link nav__link nav__link_mini" href="#masters">Мастера</a>
+                            <a class="footer__link nav__link nav__link_mini" href="#projects">Наши работы</a>
+                            <a class="footer__link nav__link nav__link_mini" href="#contacts">Контакты</a>
                         </nav>
                     </div>
                 </div>
