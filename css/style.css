@@ -210,7 +210,7 @@ a {
     position: relative;
 }
 
-.header__img:before {
+.header__image:before {
     content: '';
     width: 472px;
     height: 472px;
