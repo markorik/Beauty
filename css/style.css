@@ -10,6 +10,7 @@ body {
     color: #333333;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    min-width: 320px;
 }
 
 html, body, .wrapper {
@@ -43,6 +44,11 @@ a {
 .wrapper {
     display: flex;
     flex-direction: column;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
 }
 
 .main {
@@ -115,6 +121,16 @@ a {
     color: #333333;
 }
 
+/* меню-бургер */
+
+.burger__bar {
+    width: 35px;
+    height: 4px;
+    background-color: #333333;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
 /* навигация и прайс */
 
 .nav__link {
@@ -173,6 +189,16 @@ a {
     margin-left: 28px;
 }
 
+.header__burger {
+    display: none;
+    margin-right: 20px;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: right;
+}
+
 .header__content {
     align-items: center;
     padding-bottom: 130px;
@@ -203,6 +229,8 @@ a {
     right: 90px;
     z-index: 1;
     overflow: hidden;
+    opacity: 1;
+    transition: 0.3s opacity;
 }
 
 .header__img {
@@ -532,4 +560,95 @@ a {
 
 .footer__link:not(:first-child) {
     margin-left: 28px;
+}
+
+/* уменьшаем расстояние между пунктами навигации, картинка полупрозрачная */
+
+@media (max-width: 992px) {
+    .header__link:not(:first-child) {
+        margin-left: 10px;
+    }
+    .header__image {
+        opacity: 0.5;
+    }
+}
+
+/* меню-бургер, заголовок и текст по центру, соцсети горизонтально, уменьшение отступов между блоками, картинка выключена */
+
+@media (max-width: 768px) {
+    .header__burger {
+        display: block;
+    }
+    .header__nav {
+        display: none;
+    }
+    .header__top {
+        justify-content: space-between;
+    }
+    .header__slogan {
+        text-align: center;
+    }
+    .header__image {
+        display: none;
+    }
+    .header__content {
+        flex-direction: column;
+        padding-bottom: 40px;
+    }
+    .header__social {
+        flex-direction: row;
+    }
+    .header__li:not(:first-child) {
+        padding-left: 24px;
+    }
+    .header__btn {
+        margin-bottom: 50px;
+    }
+    .header__top {
+        margin-bottom: 50px;
+    }
+}
+
+/* меню-бургер, логотип и телефон в столбик, заголовок и текст по центру, соцсети горизонтально, 
+уменьшение отступов между блоками, картинка выключена */
+
+@media (max-width: 576px) {
+    .header__burger {
+        display: block;
+    }
+    .header__nav {
+        display: none;
+    }
+    .header__menu {
+        margin-bottom: 20px;
+    } 
+    .header__info {
+        text-align: center;  
+    }
+    .header__top {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header__slogan {
+        text-align: center;
+    }
+    .header__image {
+        display: none;
+    }
+    .header__content {
+        flex-direction: column;
+        padding-bottom: 40px;
+    }
+    .header__social {
+        flex-direction: row;
+    }
+    .header__li:not(:first-child) {
+        padding-left: 24px;
+    }
+    .header__btn {
+        margin-bottom: 50px;
+    }
+    .header__top {
+        margin-bottom: 50px;
+    }
 }
