@@ -51,7 +51,7 @@ function serve() {
 
 // Задачи копирования файлов
   function copy() {
-    return src(['src/img/**/*.*', 'src/css/**/*.css'], {
+    return src(['src/images/**/*.*', 'src/css/**/*.css'], {
       base: 'src/',
     }).pipe(dest('dist'));
   }
