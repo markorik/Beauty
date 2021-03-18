@@ -1,0 +1,51 @@
+.popular {
+    padding-bottom: 2px;
+    
+    &__title {
+        margin: 0 0 35px 0;
+    }
+    
+    &__card {
+        margin: 0 0 48px 0;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   
+    &__image {
+        height: 180px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left top;
+    }
+    
+    &__body {
+        padding: 15px 0 0 0;
+    }
+    
+    &__caption {
+        font: {
+            size: 18px;
+            weight: 600;
+        }
+        margin: 0 0 8px 0;
+    }
+    
+    &__text {
+        font: {
+            size: 12px;
+            weight: 400;
+        }
+        line-height: 20px;
+        margin: 0 0 16px 0;
+    }
+}

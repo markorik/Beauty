@@ -1,0 +1,30 @@
+.footer{ 
+    flex-shrink: 0;
+    &__row {
+        justify-content: space-around;
+    }
+
+    &__text {
+        font-size: 12px;
+        padding: {
+            top: 20px;
+            bottom: 20px;
+        }
+    }
+    
+    &__copyright {
+        padding-bottom: 8px;
+    }
+        
+    &__nav {
+        text-align: right;
+        padding: {
+            top: 32px;
+            bottom: 31px;
+        }
+    }
+
+    &__link:not(:first-child) {
+        margin-left: 28px;
+    }
+}

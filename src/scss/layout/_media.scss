@@ -1,0 +1,104 @@
+// уменьшение расстояния между пунктами навигации, картинка полупрозрачная
+
+@media (max-width: 992px) {
+    .header {
+        &__link:not(:first-child) {
+            margin-left: 10px;
+        }
+        &__image {
+            opacity: 0.5;
+        }
+    }
+}
+
+// меню-бургер, заголовок и текст по центру, соцсети горизонтально, уменьшение отступов между блоками, картинка выключена
+
+@media (max-width: 768px) {
+    .header {
+        &__burger {
+            display: block;
+        }
+        
+        &__nav, &__image {
+            display: none;
+        }
+        
+        &__top {
+            justify-content: space-between;
+        }
+        
+        &__slogan {
+            text-align: center;
+        }
+        
+        &__content {
+            flex-direction: column;
+            padding-bottom: 40px;
+        }
+       
+        &__social {
+            flex-direction: row;
+        }
+        
+        &__li:not(:first-child) {
+            padding-left: 24px;
+        }
+        
+        &__btn {
+            margin-bottom: 50px;
+        }
+        
+        &__top {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+// меню-бургер, логотип и телефон в столбик, заголовок и текст по центру, соцсети горизонтально, 
+// уменьшение отступов между блоками, картинка выключена
+
+@media (max-width: 576px) {
+    .header {
+        &__burger {
+            display: block;
+        }
+        
+        &__nav, &__image {
+            display: none;
+        }
+        
+        &__menu {
+            margin-bottom: 20px;
+        } 
+        
+        &__info, &__slogan {
+            text-align: center;  
+        }
+        
+        &__top {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        &__content {
+            flex-direction: column;
+            padding-bottom: 40px;
+        }
+        
+        &__social {
+            flex-direction: row;
+        }
+        
+        &__li:not(:first-child) {
+            padding-left: 24px;
+        }
+        
+        &__btn {
+            margin-bottom: 50px;
+        }
+        
+        &__top {
+            margin-bottom: 50px;
+        }
+    }
+}

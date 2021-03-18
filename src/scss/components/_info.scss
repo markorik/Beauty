@@ -1,0 +1,21 @@
+.info {
+    line-height: 14px;
+    text-align: right;
+    
+    &__phone {
+        font: {
+            size: 18px;
+            weight: 500;
+        }
+        padding-bottom: 8px;
+    }
+
+    &__shedule {
+        font: {
+            size: 11px;
+            weight: 400;
+        }
+        line-height: 14px;
+    }
+}
+
