@@ -1,0 +1,88 @@
+.masters {
+    background-color: $back-color;
+    padding-top: 80px;
+    
+    &__title {
+        margin: 0 0 32px 0;
+    }
+    
+    &__text {
+        margin-bottom: 24px;
+    }
+}
+
+.master-card {
+    &__photo {
+        height: 300px;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;        
+        background: {
+            position: center;
+            repeat: no-repeat;
+            size: cover;
+        }
+        
+        &:before {
+            content: '';
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            background-color: $shadow-color;
+            opacity: 0;
+            transition: 0.2ms;
+            z-index: 1;
+        }
+        
+        &:hover:before {
+            opacity: 0.5;
+            cursor: $cursor, pointer;
+        }
+        
+        &:after {
+            content: 'Записаться к мастеру';
+            font: {
+                size: 14px;
+                weight: 500;
+            }
+            color: $contrast-text-color;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            max-width: 90px;
+            opacity: 0;
+            z-index: 2;
+        }
+        
+        &:hover:after {
+            opacity: 1;
+            cursor: $cursor, pointer;
+        }
+    }
+    &__name {
+        margin: 20px 0 8px 0;
+    }
+    
+    &__prof {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    &__exp {
+        font: {
+            size: 12px;
+            weight: 300;
+        }
+        text-transform: uppercase;
+    }
+}
+
+
+

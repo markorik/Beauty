@@ -1,0 +1,9 @@
+.burger {
+    &__bar {
+        width: 35px;
+        height: 4px;
+        background-color: $main-color;
+        border-radius: 8px;
+        margin: 5px 0;
+    }
+}

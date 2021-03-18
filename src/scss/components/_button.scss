@@ -1,0 +1,26 @@
+.btn {
+    font: 500 12px/14px 'Montserrat';
+    height: 34px;
+    width: 112px;
+    color: $contrast-text-color;
+    background-color: $accent-color;
+    border: none;
+    outline: none;
+    border-radius: 17px;
+    cursor: $cursor, pointer;
+    transition: 0.1s transform;
+    
+    &:hover {
+        transform: scale(1.04);
+    }
+
+    &_large {
+        height: 48px;
+        width: 203px;
+        font-size: 14px;
+        border-radius: 24px;
+    }
+}
+
+
+

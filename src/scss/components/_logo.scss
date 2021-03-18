@@ -1,0 +1,11 @@
+.logo {
+    font: {
+        size: 24px;
+        weight: 700;
+    }
+    
+    &__link {
+        text-decoration: none;
+        color: $main-color;
+    }
+}

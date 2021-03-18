@@ -1,0 +1,104 @@
+.header {
+    flex-shrink: 0;
+    background: {
+        color: $back-color;
+        image: $back-img;
+    }
+
+    &__top, &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__top {
+        margin: {
+            top: 30px;
+            bottom: 120px;
+        }
+    }
+    
+    &__link:not(:first-child) {
+        margin-left: 28px;
+    }
+    
+    &__burger {
+        display: none;
+        margin-right: 20px;
+    }
+    
+    &__menu {
+        display: flex;
+        justify-content: right;
+    }
+    
+    &__content {
+        align-items: center;
+        padding-bottom: 130px;
+        position: relative;
+    }
+    
+    &__slogan {
+        max-width: 486px;
+        vertical-align: middle;
+        z-index: 2;
+    }
+    
+    &__caption {
+        font: {
+            size: 48px;
+            weight: 600;
+        }
+        margin-bottom: 16px;
+    }
+    
+    &__text {
+        font: {
+            size: 20px;
+            weight: 400;
+        }
+        margin-bottom: 60px;
+    }
+    
+    &__image {
+        position: absolute;
+        bottom: 0;
+        right: 90px;
+        z-index: 1;
+        overflow: hidden;
+        opacity: 1;
+        transition: 0.3s opacity;
+        
+        &:before {
+            content: '';
+            width: 472px;
+            height: 472px;
+            background-color: $accent-color;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 0;
+            bottom: -110px;
+            right: 0;
+        }
+    }
+    
+    &__img {
+        display: block;
+        position: relative;
+    }
+    
+    &__social {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transform: translateY(-25%);
+    }
+    
+    &__li:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+
+
+
+

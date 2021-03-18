@@ -1,0 +1,75 @@
+$cursor: url('../images/pointer.svg');
+$back-img: url('../images/background.png');
+$main-color: #333333;
+$second-color: #00bf78;
+$accent-color: #fb9475;
+$link-color: #278aff;
+$back-color: #f8f6f7;
+$contrast-text-color: #ffffff;
+$shadow-color: #000000;
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: $main-color;
+    font: 16px 'Montserrat', sans-serif;
+    min-width: 320px;
+}
+
+html, body, .wrapper {
+    height: 100%;
+}
+
+h2 {
+    font: {
+        weight: 700;
+        size: 48px;
+    }
+}
+
+h3 {
+    font: {
+        weight: 700;
+        size: 36px;
+    }
+}
+
+h4 {
+    font: {
+        weight: 600;
+        size: 18px;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    cursor: $cursor, pointer;
+    color: $link-color;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+}
+
+.main {
+    flex: 1;
+}
+
+.section {
+    padding: 50px 0;
+}

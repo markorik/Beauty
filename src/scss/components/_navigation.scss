@@ -1,0 +1,26 @@
+.nav {
+    &__link {
+        text-decoration: none;
+        font: {
+            size: 14px;
+            weight: 500;
+        }
+        color: $main-color;
+        
+        &:visited {
+            color: $main-color;
+        }
+    
+        &:hover {
+            color: $second-color;
+        }
+      
+        &_mini {
+            font: {
+                size: 12px;
+                weight: 400;
+            }
+        }
+    }
+}
+
