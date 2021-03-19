@@ -52,6 +52,20 @@
             margin-bottom: 50px;
         }
     }
+
+    .brands {
+        &__title {
+            margin-bottom: 20px;
+        }
+        
+        &__images {
+            flex-direction: column;
+        }
+
+        &__img {
+            margin-bottom: 20px;
+        }
+    }
 }
 
 // меню-бургер, логотип и телефон в столбик, заголовок и текст по центру, соцсети горизонтально, 
@@ -99,6 +113,21 @@
         
         &__top {
             margin-bottom: 50px;
+        }
+    }
+    
+    .brands {
+        &__title {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        &__images {
+            flex-direction: column;
+        }
+
+        &__img {
+            margin-bottom: 20px;
         }
     }
 }

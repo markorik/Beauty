@@ -1,0 +1,16 @@
+.brands {
+    &__title {
+        text-align: center;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+    
+    &__images {
+        max-width: 890px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0.4;
+    }
+}
