@@ -9,6 +9,34 @@
             opacity: 0.5;
         }
     }
+
+    .section {
+        margin-bottom: 80px;
+    }
+
+    .about {
+        margin-top: 80px;
+        
+        &__top {
+            margin-bottom: 50px;
+        }
+
+        &__content {
+            margin-bottom: 20px;
+        }
+
+        &__video {
+            margin: 0 auto;
+        }
+    }
+
+    .masters {
+        padding: 50px 0;
+    }
+
+    .contacts {
+        margin-bottom: 0;
+    }
 }
 
 // меню-бургер, заголовок и текст по центру, соцсети горизонтально, уменьшение отступов между блоками, картинка выключена
@@ -53,6 +81,27 @@
         }
     }
 
+    .section {
+        margin-bottom: 50px;
+    }
+
+    .about {
+        margin-top: 50px;
+    }
+
+    .masters {
+        padding: 40px 0;
+        &__profile {
+            margin-bottom: 20px;
+        }
+    }
+
+    .master-card {
+        &__prof {
+            margin-bottom: 10px;
+        }
+    }
+
     .brands {
         &__title {
             margin-bottom: 20px;
@@ -64,6 +113,28 @@
 
         &__img {
             margin-bottom: 20px;
+        }
+    }
+
+    .contacts {
+       margin-bottom: 0;
+
+        &__text {
+            text-align: center;
+            margin-top: 18px;
+        }
+    }
+
+    .footer {
+        &__nav {
+            display: flex;
+            flex-direction: column;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        &__link {
+            padding: 5px 0;
         }
     }
 }
@@ -115,7 +186,34 @@
             margin-bottom: 50px;
         }
     }
+
+    .section {
+        margin-bottom: 50px;
+    }
     
+    .about {
+        margin-top: 50px;
+    
+        &__top {
+            margin-bottom: 50px;
+        }
+
+        .item {
+            padding-bottom: 20px;
+
+            &__caption, &__title {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .masters {
+        padding: 40px 0;
+        &__profile {
+            margin-bottom: 20px;
+        }
+    }
+
     .brands {
         &__title {
             margin-bottom: 20px;
@@ -128,6 +226,21 @@
 
         &__img {
             margin-bottom: 20px;
+        }
+    }
+
+    .contacts {
+        margin-bottom: 0;
+        
+        &__text {
+            text-align: center;
+            margin-top: 18px;
+        }
+    }
+
+    .footer {
+        &__nav {
+            flex-direction: column;
         }
     }
 }

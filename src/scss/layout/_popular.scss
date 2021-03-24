@@ -1,6 +1,4 @@
 .popular {
-    padding-bottom: 2px;
-        
     &__card {
         margin: 0 0 48px 0;
     }
@@ -12,6 +10,7 @@
     align-items: flex-start;
    
     &__image {
+        max-width: 350px;
         height: 180px;
         border-radius: 8px;
         overflow: hidden;
@@ -43,5 +42,6 @@
         }
         line-height: 20px;
         margin: 0 0 16px 0;
+        max-width: 350px;
     }
 }

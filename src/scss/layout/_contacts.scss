@@ -1,4 +1,35 @@
 .contacts {
-    padding-top: 78px;
+    padding: 40px 0;
     background-color: $back-color;
+    margin-bottom: 0;
+
+    &__text {
+        margin-top: 38px;
+    }
+
+    &__form {
+        margin: 0 auto;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+    }
+
+    &__information {
+        margin-bottom: 32px;
+    }
+
+    &__social {
+        margin-bottom: 20px;    
+    }
+
+    &__social-text {
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 12px;
+    }
+
+    &__social a:not(:last-of-type) {
+        margin-right: 24px;
+    }
 }

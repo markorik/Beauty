@@ -1,13 +1,15 @@
-.price {
-    padding-bottom: 100px;
-        
+.price {        
     &__tabs {
         text-decoration: none;
-        margin-bottom: 21px;
     }
     
-    &__section:not(:first-child) {
-        margin-left: 28px;
+    &__section {
+        display: inline-block;
+        margin-bottom: 21px;
+    }
+
+    &__section:not(:last-child) {
+        margin-right: 28px;
     }
     
     &__service {

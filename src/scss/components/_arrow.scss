@@ -1,0 +1,19 @@
+.arrow {
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: $cursor, pointer;
+    transition: 0.1s transform;  
+    
+    &__img {
+        margin: 10.5px auto;    
+    }
+
+    &:hover {
+        transform: scale(1.2);
+        background-color: $back-color;
+    }
+}

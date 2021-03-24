@@ -1,8 +1,9 @@
 .about {
-    padding-top: 100px;
+    margin-top: 100px;
     
     &__top {
         justify-content: space-between;
+        margin-bottom: 100px;
     }
     
     &__caption {
@@ -40,11 +41,11 @@
     
     &__bottom {
         justify-content: space-around;
-        margin-top: 100px;
     }
     
     &__video {
         height: 295px;
+        max-width: 443px;
         background: {
             position: right;
             repeat: no-repeat;
@@ -54,6 +55,7 @@
         position: relative;
         overflow: hidden;
         display: flex;
+
         
         &:before {
             content: '';
