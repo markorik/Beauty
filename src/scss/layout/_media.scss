@@ -102,6 +102,10 @@
         }
     }
 
+    .projects__container {
+        justify-content: right;
+    }
+
     .brands {
         &__title {
             margin-bottom: 20px;
@@ -213,6 +217,11 @@
             margin-bottom: 20px;
         }
     }
+
+    .projects__container {
+        justify-content: right;
+    }
+
 
     .brands {
         &__title {
