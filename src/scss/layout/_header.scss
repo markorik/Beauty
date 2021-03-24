@@ -30,6 +30,10 @@
         display: flex;
         justify-content: right;
     }
+
+    &__info {
+        text-align: right;
+    }
     
     &__content {
         align-items: center;
