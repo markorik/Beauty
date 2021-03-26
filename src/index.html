@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" /> -->
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
@@ -83,14 +86,14 @@
                                 Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные
                                 визажисты, стилисты и мастера татуажа
                             </div>
-                            <p class="about__text">
+                            <div class="about__text expandable-text">
                                 Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где
                                 гармония обретает форму,
                                 а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших
                                 изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике.
-                                Мы создаем стиль – вместе с Вами и для Вас.
-                            </p>
-                            <a class="about__link" href="/">Развернуть</a>
+                                Мы создаем стиль – вместе с Вами и для Вас. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Заглавных обеспечивает города парадигматическая на берегу своего если переулка путь жизни продолжил несколько, коварный раз lorem, назад грамматики прямо которое. До заманивший о скатился заголовок своих образ использовало страну дороге однажды там он пояс вдали дорогу залетают это ведущими реторический семь инициал бросил, деревни путь! Вскоре правилами, раз сих взобравшись, до ее собрал, страна даль последний то ручеек всеми прямо ipsum. Напоивший приставка семь переписывается большого подпоясал образ свое одна лучше вопрос назад последний на берегу, пояс рукопись! Грустный даль свое всеми над повстречался он продолжил букв меня, деревни все жаренные.
+                            </div>
+                            <!-- <a class="about__link" href="/">Развернуть</a> -->
                         </div>
                         <div class="col-sm-12 col-lg-5">
                             <div class="about__video" style="background-image: url('./images/about-video.jpg');">
@@ -332,34 +335,36 @@
             <section id="projects" class="section projects">
                 <div class="container projects__top">
                     <h2 class="section__title">Наши работы</h2>
-                    <div class="projects__scroll">
-                        <button class="projects__arrow arrow">
-                            <img class="arrow__img" src="./images/arrow-left.svg" alt="">
-                        </button>
-                        <button class="arrow">
-                            <img class="arrow__img" src="./images/arrow-right.svg" alt="">
-                        </button>
-                    </div>
+                    <!-- блок для кнопок слайдера -->
+                    <div class="projects__scroll"></div>
                 </div>
                 <div class="projects__container">
                     <div class="projects__card">
-                        <img class="projects__img" src="./images/project-1.jpg" alt="">
+                        <a href="./images/project-1.jpg" data-fancybox>
+                            <img class="projects__img" src="./images/project-1.jpg" alt="">
+                        </a>
                     </div>
                     <div class="projects__card">
-                        <img class="projects__img" src="./images/project-2.jpg" alt="">
+                        <a href="./images/project-2.jpg" data-fancybox>
+                            <img class="projects__img" src="./images/project-2.jpg" alt="">
+                        </a>
                     </div>
                     <div class="projects__card">
-                        <img class="projects__img" src="./images/project-3.jpg" alt="">
+                        <a href="./images/project-3.jpg" data-fancybox>
+                            <img class="projects__img" src="./images/project-3.jpg" alt="">
+                        </a>
                     </div>
                     <div class="projects__card">
-                        <img class="projects__img" src="./images/project-4.jpg" alt="">
+                        <a href="./images/project-4.jpg" data-fancybox>
+                            <img class="projects__img" src="./images/project-4.jpg" alt="">
+                        </a>
                     </div>
                     <div class="projects__card">
-                        <img class="projects__img" src="./images/project-3.jpg" alt="">
+                        <a href="./images/project-3.jpg" data-fancybox>
+                            <img class="projects__img" src="./images/project-3.jpg" alt="">
+                        </a>
                     </div>
-                    <div class="projects__card">
-                        <img class="projects__img" src="./images/project-4.jpg" alt="">
-                    </div>
+                    
                 </div>
             </section>
             <!-- секция Бренды -->
@@ -456,4 +461,15 @@
             </div>
         </footer>
     </div>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script src="./js/main.js"></script>
+   
+
+
+
 </body>

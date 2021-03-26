@@ -102,10 +102,6 @@
         }
     }
 
-    .projects__container {
-        justify-content: right;
-    }
-
     .brands {
         &__title {
             margin-bottom: 20px;
@@ -218,11 +214,6 @@
         }
     }
 
-    .projects__container {
-        justify-content: right;
-    }
-
-
     .brands {
         &__title {
             margin-bottom: 20px;
@@ -251,5 +242,13 @@
         &__nav {
             flex-direction: column;
         }
+    }
+}
+
+@media (max-width: 480px) {
+    .projects__scroll {
+        position: absolute;
+        right: 0;
+        bottom: -35px;
     }
 }
