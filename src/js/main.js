@@ -1,4 +1,4 @@
-
+// слайдер с использованием slicker
 $(document).ready(function(){
     $('.projects__container').slick({
         infinite: true,
@@ -29,53 +29,52 @@ $(document).ready(function(){
       });
   });
 
-//развернуть/свернуть текст
+// развернуть/свернуть текст
 const TogglePhrases = { 
     Collapse: 'Свернуть', 
     Expand: 'Развернуть' 
 }; 
-
 class ExpandableText { 
-  constructor(elem, maxLength = 500) { 
-    this.maxLength = maxLength; 
-    this.elem = elem;     
-    this.originalText = elem.textContent; 
-     
-    this.isToggle = false; 
-     
-    // this.toggleBtn = document.createElement('button'); 
-    this.toggleBtn = document.createElement('a');
-    this.toggleBtn.className = "about__link";
-    this.toggleBtn.textContent = TogglePhrases.Expand; 
-    this.toggleBtn.addEventListener('click', () => this.toggle()); 
-     
-    this.elem.textContent = this._getShortText(); 
-    this.elem.append(this.toggleBtn); 
+  constructor(elem) { 
+    this.elem = elem;
+    this.isCollapsed = true;   
+    this.toggleLink = document.querySelector('a.expand__link');
+    this.toggleLink.addEventListener('click', () => this.toggle()); 
+    this.elem.append(this.toggleLink);
   } 
    
   toggle() { 
-    this.isToggle = !this.isToggle; 
-     
-    this.toggleBtn.textContent = this.isToggle 
-      ? TogglePhrases.Collapse 
-      : TogglePhrases.Expand; 
-     
-    this.elem.textContent = this.isToggle 
-      ? this.originalText 
-      : this._getShortText(); 
-     
-    this.elem.append(this.toggleBtn); 
-  } 
-   
-  _getShortText() { 
-    return (this.originalText.slice(0, this.maxLength)) + '...'; 
+    this.isCollapsed = !this.isCollapsed;    
+    this.toggleLink.textContent = this.isCollapsed
+      ? TogglePhrases.Expand
+      : TogglePhrases.Collapse;
+
+    for (let e of this.elem.querySelectorAll('p.expand__text')) {
+      e.style.display = this.isCollapsed ? 'none' : 'block';
+    }
   } 
 } 
 
 window.onload = () => { 
-  const textElems = document.querySelectorAll('.expandable-text'); 
+  // развернуть/свернуть текст
+  const textElems = document.querySelectorAll('.expand'); 
    
   for (const el of textElems) { 
-    new ExpandableText(el, 485); 
+    new ExpandableText(el); 
+  } 
+
+  // плавный скроллинг по секциям
+  const smoothScrollLinks = document.querySelectorAll('.nav__smooth'); 
+   
+  for (let link of smoothScrollLinks) { 
+    link.addEventListener('click', event => { 
+      event.preventDefault();     
+      const target = event.target; 
+      const elementToScroll = document.querySelector(target.getAttribute('href')); 
+      elementToScroll.scrollIntoView({ behavior: 'smooth', block: 'end'}); 
+    }); 
   } 
 }
+   
+  
+
