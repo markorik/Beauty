@@ -1,0 +1,16 @@
+.tabs { 
+    &__links { 
+      .active { 
+        color: $second-color; 
+        border-bottom: 2px solid $second-color;
+      } 
+    } 
+     
+    &__item { 
+      display: none; 
+       
+      &.active { 
+        display: flex; 
+      } 
+    } 
+  }

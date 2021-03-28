@@ -1,59 +1,6 @@
-// слайдер с использованием slicker
-$(document).ready(function(){
-    $('.projects__container').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        appendArrows: $('.projects__scroll'),
-        variableWidth: true,
-        responsive: [ 
-            {
-                breakpoint: 1440,
-                settings: {
-                    slidesToShow: 3
-                }
-            }, 
-            {
-                breakpoint: 1080,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 720,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
-      });
-  });
-
-// развернуть/свернуть текст
-const TogglePhrases = { 
-    Collapse: 'Свернуть', 
-    Expand: 'Развернуть' 
-}; 
-class ExpandableText { 
-  constructor(elem) { 
-    this.elem = elem;
-    this.isCollapsed = true;   
-    this.toggleLink = document.querySelector('a.expand__link');
-    this.toggleLink.addEventListener('click', () => this.toggle()); 
-    this.elem.append(this.toggleLink);
-  } 
-   
-  toggle() { 
-    this.isCollapsed = !this.isCollapsed;    
-    this.toggleLink.textContent = this.isCollapsed
-      ? TogglePhrases.Expand
-      : TogglePhrases.Collapse;
-
-    for (let e of this.elem.querySelectorAll('p.expand__text')) {
-      e.style.display = this.isCollapsed ? 'none' : 'block';
-    }
-  } 
-} 
+import { TabsManager } from './tabs.js';
+import { ExpandableText } from './spoiler.js';
+import { comment } from 'postcss';
 
 window.onload = () => { 
   // развернуть/свернуть текст
@@ -74,7 +21,43 @@ window.onload = () => {
       elementToScroll.scrollIntoView({ behavior: 'smooth', block: 'end'}); 
     }); 
   } 
+
+  // табы 
+  const tabsElem = document.getElementById('tabs'); 
+  new TabsManager(tabsElem); 
 }
+
+// слайдер с использованием slicker
+$(document).ready(function(){
+    $('.projects__container').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        appendArrows: $('.projects__scroll'),
+        variableWidth: true,
+        responsive: [ 
+            {
+              breakpoint: 1440,
+              settings: {
+                slidesToShow: 3
+              }
+            }, 
+            {
+              breakpoint: 1080,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 720,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+        ]
+      });
+  });
+
    
   
 
