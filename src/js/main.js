@@ -25,6 +25,15 @@ window.onload = () => {
   // табы 
   const tabsElem = document.getElementById('tabs'); 
   new TabsManager(tabsElem); 
+
+  // бургер
+  window.openNav = function() {
+    document.getElementById('burger').style.height = "100%";
+  }
+  
+  window.closeNav = function() {
+    document.getElementById('burger').style.height = "0%";
+  }
 }
 
 // слайдер с использованием slicker
@@ -57,6 +66,7 @@ $(document).ready(function(){
         ]
       });
   });
+
 
    
   

@@ -22,12 +22,17 @@
         <header class="header">
             <div class="container">
                 <div class="header__top">
+                    <div id="burger" class="burger">
+                        <a href="javascript:void(0)" class="burger__close burger__link" onclick="closeNav()">&times;</a>
+                        <div class="burger__items">
+                          <a href="#price" class="burger__link" onclick="closeNav()">УСЛУГИ И ЦЕНЫ</a>
+                          <a href="#masters" class="burger__link" onclick="closeNav()">МАСТЕРА</a>
+                          <a href="#projects" class="burger__link" onclick="closeNav()">НАШИ РАБОТЫ</a>
+                          <a href="#contacts" class="burger__link" onclick="closeNav()">КОНТАКТЫ</a>                         
+                        </div>                       
+                    </div>                    
                     <div class="header__menu">
-                        <div class="header__burger burger">
-                            <div class="burger__bar"></div>
-                            <div class="burger__bar"></div>
-                            <div class="burger__bar"></div>
-                        </div>
+                        <div onclick="openNav()" class="burger__open header__burger">&#9776;</div>
                         <div class="header__logo logo">
                             <a class="logo__link" href="/">Мир красоты</a>
                         </div>
