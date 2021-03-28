@@ -189,6 +189,10 @@
 
     .section {
         margin-bottom: 50px;
+        
+        &__title {
+            text-align: center;
+        }
     }
     
     .about {
@@ -196,6 +200,7 @@
     
         &__top {
             margin-bottom: 50px;
+            text-align: center;
         }
 
         .item {
@@ -207,10 +212,22 @@
         }
     }
 
+    .popular {
+        &__card {
+            align-items: center;
+            text-align: center;
+        }
+    }
+
     .masters {
         padding: 40px 0;
+        text-align: center;
         &__profile {
             margin-bottom: 20px;
+        }
+
+        &__photo {
+            margin: 0 auto;
         }
     }
 
@@ -229,6 +246,12 @@
         }
     }
 
+    .projects__scroll {
+        position: absolute;
+        right: 10px;
+        bottom: -45px;
+    }
+
     .contacts {
         margin-bottom: 0;
         
@@ -242,13 +265,5 @@
         &__nav {
             flex-direction: column;
         }
-    }
-}
-
-@media (max-width: 480px) {
-    .projects__scroll {
-        position: absolute;
-        right: 0;
-        bottom: -35px;
     }
 }

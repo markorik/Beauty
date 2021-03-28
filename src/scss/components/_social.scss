@@ -5,6 +5,8 @@
     padding: 0;
     
     &__icon {
+        transition: 0.3s transform;
+        
         &:hover {
             transform: scale(1.2);
         }        
