@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">    
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
@@ -23,16 +21,16 @@
             <div class="container">
                 <div class="header__top">
                     <div id="burger" class="burger">
-                        <a href="javascript:void(0)" class="burger__close burger__link" onclick="closeNav()">&times;</a>
+                        <a href="javascript:void(0)" class="burger__close burger__link">&times;</a>
                         <div class="burger__items">
-                          <a href="#price" class="burger__link" onclick="closeNav()">УСЛУГИ И ЦЕНЫ</a>
-                          <a href="#masters" class="burger__link" onclick="closeNav()">МАСТЕРА</a>
-                          <a href="#projects" class="burger__link" onclick="closeNav()">НАШИ РАБОТЫ</a>
-                          <a href="#contacts" class="burger__link" onclick="closeNav()">КОНТАКТЫ</a>                         
+                          <a href="#price" class="burger__link">УСЛУГИ И ЦЕНЫ</a>
+                          <a href="#masters" class="burger__link">МАСТЕРА</a>
+                          <a href="#projects" class="burger__link">НАШИ РАБОТЫ</a>
+                          <a href="#contacts" class="burger__link">КОНТАКТЫ</a>                         
                         </div>                       
                     </div>                    
                     <div class="header__menu">
-                        <div onclick="openNav()" class="burger__open header__burger">&#9776;</div>
+                        <div id="burger-open" class="burger__open header__burger">&#9776;</div>
                         <div class="header__logo logo">
                             <a class="logo__link" href="/">Мир красоты</a>
                         </div>
@@ -102,14 +100,16 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-lg-5">
-                            <div class="about__video" style="background-image: url('./images/about-video.jpg');">
-                                <div class="about__label">
-                                    <div>
-                                        <img src="./images/play-video.svg" alt="">
+                            <a class="about__video-title" data-fancybox href="https://www.youtube.com/watch?v=1OnqAHt35F0">
+                                <div class="about__video" style="background-image: url('./images/about-video.jpg');">
+                                    <div class="about__label">
+                                        <div>
+                                            <img src="./images/play-video.svg" alt="">
+                                        </div>
+                                        <p>Короткое видео о нас</p>
                                     </div>
-                                    <p>Короткое видео о нас</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="row about__bottom">
@@ -231,7 +231,7 @@
                                     <p class="price__comment">Короткие волосы</p>
                                 </div>
                                 <div class="col-4 col-sm-2">
-                                    <p class="price__price">1200 ₽</p>
+                                    <p class="price__price">200 ₽</p>
                                 </div>
                                 <div class="col-8 col-sm-4">
                                     <p class="price__service">Стрижка бороды и усов</p>
@@ -245,7 +245,7 @@
                                     <p class="price__comment">Короткие волосы</p>
                                 </div>
                                 <div class="col-4 col-sm-2">
-                                    <p class="price__price">1200 ₽</p>
+                                    <p class="price__price">12000 ₽</p>
                                 </div>
                                 <div class="col-8 col-sm-4">
                                     <p class="price__service">Экспресс укладка</p>
@@ -433,32 +433,41 @@
                     <div class="projects__scroll"></div>
                 </div>
                 <div class="projects__container">
-                    <div class="projects__card">
+                    <div class="projects__link">
                         <a href="./images/project-1.jpg" data-fancybox>
-                            <img class="projects__img" src="./images/project-1.jpg" alt="">
+                            <div class="projects__card">                                
+                                <img class="projects__img" src="./images/project-1.jpg" alt=""><
+                            </div>
                         </a>
                     </div>
-                    <div class="projects__card">
+                    <div class="projects__link">
                         <a href="./images/project-2.jpg" data-fancybox>
-                            <img class="projects__img" src="./images/project-2.jpg" alt="">
+                            <div class="projects__card">
+                                <img class="projects__img" src="./images/project-2.jpg" alt="">
+                            </div>
                         </a>
                     </div>
-                    <div class="projects__card">
-                        <a href="./images/project-3.jpg" data-fancybox>
-                            <img class="projects__img" src="./images/project-3.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="projects__card">
-                        <a href="./images/project-4.jpg" data-fancybox>
-                            <img class="projects__img" src="./images/project-4.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="projects__card">
-                        <a href="./images/project-3.jpg" data-fancybox>
-                            <img class="projects__img" src="./images/project-3.jpg" alt="">
-                        </a>
-                    </div>
-                    
+                        <div class="projects__link">
+                            <a href="./images/project-3.jpg" data-fancybox>
+                                <div class="projects__card">
+                                    <img class="projects__img" src="./images/project-3.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>   
+                        <div class="projects__link">
+                            <a href="./images/project-4.jpg" data-fancybox>
+                                <div class="projects__card">
+                                    <img class="projects__img" src="./images/project-4.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="projects__link">
+                            <a href="./images/project-3.jpg" data-fancybox>
+                                <div class="projects__card">
+                                    <img class="projects__img" src="./images/project-3.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>                
                 </div>
             </section>
             <!-- секция Бренды -->
@@ -509,17 +518,17 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-7">
-                            <form class="contacts__form form" action="#" method="POST">
+                            <form id="contact-form" class="contacts__form form" action="#" method="POST">
                                 <p class="form__title">Быстрая запись</p>
                                 <p class="form__text">Наш менеджер перезвонит в течение нескольких минут, уточнит
                                     подробности и согласует время.
                                 </p>
                                 <div>
-                                    <input class="form__input" type="text" name="name" id="" placeholder="Ваше имя">
+                                    <input class="form__input" type="text" name="name" id="" placeholder="Ваше имя" required>
                                 </div>
                                 <div>
                                     <input class="form__input" type="tel" name="phone" id=""
-                                        placeholder="+7 (___) ___-__-__">
+                                        placeholder="+7 (___) ___-__-__" required>
                                 </div>
                                 <button class="btn form__btn">
                                     Записаться
@@ -545,7 +554,7 @@
                     </div>
                     <div class="col-6 col-md-8">
                         <nav class="footer__nav nav">
-                            <a class="footer__link nav__link nav__link_mini nav__smooth" href="#price">Услуги&nbsp;и&nbsp;цены</a>
+                            <a class="footer__link nav__link nav__link_mini " href="#price">Услуги&nbsp;и&nbsp;цены</a>
                             <a class="footer__link nav__link nav__link_mini nav__smooth" href="#masters">Мастера</a>
                             <a class="footer__link nav__link nav__link_mini nav__smooth" href="#projects">Наши&nbsp;работы</a>
                             <a class="footer__link nav__link nav__link_mini nav__smooth" href="#contacts">Контакты</a>

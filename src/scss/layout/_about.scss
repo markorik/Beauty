@@ -40,6 +40,14 @@
         z-index: 2;
     }
     
+    &__video-title {
+        text-decoration: none;
+        
+        &:focus {
+            outline: none;
+        }
+    }
+    
     &__bottom {
         justify-content: space-around;
     }

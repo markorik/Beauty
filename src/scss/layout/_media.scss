@@ -212,6 +212,12 @@
         }
     }
 
+    .price {
+        &__price {
+            text-align: center;
+        }
+    }
+
     .popular {
         &__card {
             align-items: center;
