@@ -102,10 +102,6 @@
         }
     }
 
-    .projects__container {
-        justify-content: right;
-    }
-
     .brands {
         &__title {
             margin-bottom: 20px;
@@ -193,6 +189,10 @@
 
     .section {
         margin-bottom: 50px;
+        
+        &__title {
+            text-align: center;
+        }
     }
     
     .about {
@@ -200,6 +200,7 @@
     
         &__top {
             margin-bottom: 50px;
+            text-align: center;
         }
 
         .item {
@@ -211,17 +212,30 @@
         }
     }
 
-    .masters {
-        padding: 40px 0;
-        &__profile {
-            margin-bottom: 20px;
+    .price {
+        &__price {
+            text-align: center;
         }
     }
 
-    .projects__container {
-        justify-content: right;
+    .popular {
+        &__card {
+            align-items: center;
+            text-align: center;
+        }
     }
 
+    .masters {
+        padding: 40px 0;
+        text-align: center;
+        &__profile {
+            margin-bottom: 20px;
+        }
+
+        &__photo {
+            margin: 0 auto;
+        }
+    }
 
     .brands {
         &__title {
@@ -236,6 +250,12 @@
         &__img {
             margin-bottom: 20px;
         }
+    }
+
+    .projects__scroll {
+        position: absolute;
+        right: 10px;
+        bottom: -45px;
     }
 
     .contacts {

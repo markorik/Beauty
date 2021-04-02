@@ -1,9 +1,41 @@
-.burger {
-    &__bar {
-        width: 35px;
-        height: 4px;
-        background-color: $main-color;
-        border-radius: 8px;
-        margin: 5px 0;
+.burger {      
+    height: 0%;
+    width: 100%;
+    position: fixed; 
+    z-index: 999999; 
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    overflow-y: auto;
+    transition: 0.8s;
+
+    &__link {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 24px;
+        color: black;
+        display: block; 
+    }
+    
+    &__items {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center; 
+    }
+
+    &__close {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        font-size: 40px; 
+    }
+
+    &__open {
+        width: 40px;
+        vertical-align: middle;
+        font-size: 40px;
+        font-weight: 700;
+        cursor: pointer;        
     }
 }

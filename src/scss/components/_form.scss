@@ -28,13 +28,18 @@
             radius: 4px;
             width: 1px;
             style: solid;
-        }
+        }        
         margin-bottom: 20px;
-       &::placeholder {
+        
+        &::placeholder {
            color: #a0a0a0;
            font-size: 14px;
            line-height: 14px;
            padding-left: 16px;
+       }
+       
+       &:focus {
+           outline: none;
        }
     }
     

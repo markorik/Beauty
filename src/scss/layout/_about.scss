@@ -16,7 +16,6 @@
     }
     
     &__text {
-        padding-bottom: 16px;
         line-height: 26px;
     }
     
@@ -25,6 +24,8 @@
             size: 14px;
             weight: 400;
         }
+        display: inline-block;
+        margin-top: 16px;
     }
 
     &__label {
@@ -37,6 +38,14 @@
         width: 100%;
         align-items: center;
         z-index: 2;
+    }
+    
+    &__video-title {
+        text-decoration: none;
+        
+        &:focus {
+            outline: none;
+        }
     }
     
     &__bottom {

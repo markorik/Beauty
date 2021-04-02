@@ -1,6 +1,8 @@
 .price {        
     &__tabs {
-        text-decoration: none;
+        text-decoration: none;        
+        white-space: nowrap;
+        overflow-x: auto;        
     }
     
     &__section {
