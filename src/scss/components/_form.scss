@@ -41,6 +41,10 @@
        &:focus {
            outline: none;
        }
+       
+       &.error {
+           border: 1px solid #ff0000;         
+       }     
     }
     
     &__btn {
@@ -60,7 +64,6 @@
         font: {
             size: 12px;
             width: 300;
-
         }
     }
 }

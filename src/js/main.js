@@ -1,5 +1,6 @@
 import { TabsManager } from './tabs.js';
 import { ExpandableText } from './spoiler.js';
+import { OrderForm } from './forms/order-form.js';
 
 window.onload = () => { 
   // развернуть/свернуть текст
@@ -37,7 +38,7 @@ window.onload = () => {
     });
   }
 
-  // сбор данных из формы
+  // сбор данных из формы в секции Контакты
   const form = document.getElementById('contact-form');
 
   form.addEventListener('submit', event => {
@@ -50,9 +51,22 @@ window.onload = () => {
       phone: phone.value
     };
 
+    if (!(formData.name && formData.phone)) {
+      console.log("не все поля заполнены");  
+      return;
+    }
+
+    console.log("OK");
     form.reset();
     console.log(formData);
   });
+
+ // открытие модального окна с формой записи
+  const showHidden = document.querySelectorAll('.show');
+  for (let btn of showHidden) { 
+    btn.addEventListener('click', event => {      
+      new OrderForm();      
+    }); 
 
 }
 
@@ -85,9 +99,20 @@ $(document).ready(function(){
             }
         ]
       });
+
+      $('#contact-form').validate({
+        rules: {
+          name: "required",
+          phone: "required"
+        },
+        messages: {
+          name: "",
+          phone: ""
+        }
+      });
   });
 
-
+}
    
   
 

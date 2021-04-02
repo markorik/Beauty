@@ -58,9 +58,9 @@
                         <p class="header__text">
                             Идеальный образ за 60 минут
                         </p>
-                        <button class="header__btn btn btn_large">
-                            Записаться онлайн
-                        </button>
+                        <button data-fancybox data-src="#hidden-form" class="header__btn btn btn_large show">
+                            Записаться онлайн                            
+                        </button>                       
                     </div>
                     <div class="header__image">
                         <img class="header__img" src="./images/header-girl.png" alt="">
@@ -160,7 +160,7 @@
                                 <div class="card__caption">Маникюр</div>
                                 <div class="card__text">Аппаратный, комбинированный или классический.</div>
                             </div>
-                            <button class="card__btn btn popular__btn">Записаться</button>
+                            <button data-fancybox data-src="#hidden-form" class="card__btn btn show">Записаться</button>
                         </div>
                         <div class="col-12 col-sm-6 col-md-4 popular__card card">
                             <div class="card__image">
@@ -172,7 +172,7 @@
                                     топа.
                                     Каждый слой полимеризуется в LED-лампе.</div>
                             </div>
-                            <button class="card__btn btn">Записаться</button>
+                            <button data-fancybox data-src="#hidden-form" class="card__btn btn show">Записаться</button>
                         </div>
                         <div class="col-12 col-sm-6 col-md-4 popular__card card">
                             <div class="card__image">
@@ -183,7 +183,7 @@
                                 <div class="card__text">Выполняется в одноразовых перчатках наполненных увлажняющим
                                     лосьоном.</div>
                             </div>
-                            <button class="card__btn btn">Записаться</button>
+                            <button data-fancybox data-src="#hidden-form" class="card__btn btn show">Записаться</button>
                         </div>
                         <div class="col-12 col-sm-6 col-md-4 popular__card card">
                             <div class="card__image">
@@ -193,7 +193,7 @@
                                 <div class="card__caption">Педикюр</div>
                                 <div class="card__text">Аппаратный, комбинированный или классический.</div>
                             </div>
-                            <button class="card__btn btn">Записаться</button>
+                            <button data-fancybox data-src="#hidden-form" class="card__btn btn show">Записаться</button>
                         </div>
                         <div class="col-12 col-sm-6 col-md-4 popular__card card">
                             <div class="card__image">
@@ -205,7 +205,7 @@
                                     также выводит токсины и укрепляет суставы.
                                 </div>
                             </div>
-                            <button class="card__btn btn">Записаться</button>
+                            <button data-fancybox data-src="#hidden-form" class="card__btn btn show">Записаться</button>
                         </div>
                     </div>
                 </div>
@@ -380,8 +380,10 @@
                     <div class="row">
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <div class="masters__photo master-card__photo"
-                                    style="background-image: url('./images/master-Irina.jpg');"></div>
+                                <a data-fancybox data-src="#hidden-form" href="javascript:;">
+                                    <div class="masters__photo master-card__photo"
+                                        style="background-image: url('./images/master-Irina.jpg');"></div>
+                                </a>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Краснова Ирина</h4>
                                     <p class="master-card__prof">Мастер ногтевого сервиса</p>
@@ -391,8 +393,10 @@
                         </div>
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <div class="masters__photo master-card__photo"
-                                    style="background-image: url('./images/master-Janna.jpg');"></div>
+                                <a data-fancybox data-src="#hidden-form" href="javascript:;">
+                                    <div class="masters__photo master-card__photo"
+                                        style="background-image: url('./images/master-Janna.jpg');"></div>
+                                </a>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Калилова Жанна</h4>
                                     <p class="master-card__prof">Визажист-стилист</p>
@@ -402,8 +406,10 @@
                         </div>
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <div class="masters__photo master-card__photo"
-                                    style="background-image: url('./images/master-Alina.jpg');"></div>
+                                <a data-fancybox data-src="#hidden-form" href="javascript:;">
+                                    <div class="masters__photo master-card__photo"
+                                        style="background-image: url('./images/master-Alina.jpg');"></div>
+                                </a>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Киселева Алина</h4>
                                     <p class="master-card__prof">Парикмахер</p>
@@ -413,8 +419,10 @@
                         </div>
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <div class="masters__photo master-card__photo"
-                                    style="background-image: url('./images/master-Elena.jpg');"></div>
+                                <a data-fancybox data-src="#hidden-form" href="javascript:;">
+                                    <div class="masters__photo master-card__photo"
+                                        style="background-image: url('./images/master-Elena.jpg');"></div>
+                                </a>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Иванова Елена</h4>
                                     <p class="master-card__prof">Мастер ногтевого сервиса</p>
@@ -565,10 +573,62 @@
         </footer>
     </div>
 
+     <!-- Форма в модальном окне -->                       
+     <div style="display: none;">                            
+        <form id="hidden-form" class="contacts__form form" action="#" method="POST">
+            <p class="form__title">Заполните форму записи</p>
+            <p class="form__text">Наш менеджер перезвонит в течение нескольких минут, уточнит
+                подробности и согласует время.
+            </p>
+            
+                <input class="form__input" type="text" name="name" placeholder="Ваше имя">
+           
+                <input class="form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__">
+
+                <select class="form__input" name="masterId">
+
+                </select>                                  
+
+                <select class="form__input" name="serviceId">
+
+                </select>                                  
+
+                <input class="form__input" type="date" name="visitDate">
+
+            <button class="btn form__btn">
+                Записаться
+            </button>
+            <p class="form__agreement">Нажимая на кнопку вы соглашаетесь с <a href="#" target="_blank">обработкой
+                    персональных данных</a></p>
+        </form>
+        <div class="hidden-form_pending loader">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+              <rect x="0" y="0" width="4" height="20" fill="#333">
+                <animate attributeName="opacity" attributeType="XML"
+                  values="1; .2; 1" 
+                  begin="0s" dur="0.6s" repeatCount="indefinite" />
+              </rect>
+              <rect x="7" y="0" width="4" height="20" fill="#333">
+                <animate attributeName="opacity" attributeType="XML"
+                  values="1; .2; 1" 
+                  begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+              </rect>
+              <rect x="14" y="0" width="4" height="20" fill="#333">
+                <animate attributeName="opacity" attributeType="XML"
+                  values="1; .2; 1" 
+                  begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+              </rect>
+            </svg>
+        </div>
+    </div>
+
+
     <!-- Скрипты -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
 
     <script src="./js/main.min.js"></script>
    
