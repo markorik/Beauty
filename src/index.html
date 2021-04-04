@@ -389,7 +389,7 @@
                     <div class="row">
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <a data-fancybox data-src="#hidden-form" href="javascript:;">
+                                <a data-fancybox data-src="#hidden-form" class="show">
                                     <div class="masters__photo master-card__photo"
                                         style="background-image: url('./images/master-Irina.jpg');"></div>
                                 </a>
@@ -402,7 +402,7 @@
                         </div>
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <a data-fancybox data-src="#hidden-form" href="javascript:;">
+                                <a data-fancybox data-src="#hidden-form" class="show">
                                     <div class="masters__photo master-card__photo"
                                         style="background-image: url('./images/master-Janna.jpg');"></div>
                                 </a>
@@ -415,7 +415,7 @@
                         </div>
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <a data-fancybox data-src="#hidden-form" href="javascript:;">
+                                <a data-fancybox data-src="#hidden-form" class="show">
                                     <div class="masters__photo master-card__photo"
                                         style="background-image: url('./images/master-Alina.jpg');"></div>
                                 </a>
@@ -428,7 +428,7 @@
                         </div>
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <a data-fancybox data-src="#hidden-form" href="javascript:;">
+                                <a data-fancybox data-src="#hidden-form" class="show">
                                     <div class="masters__photo master-card__photo"
                                         style="background-image: url('./images/master-Elena.jpg');"></div>
                                 </a>
@@ -536,25 +536,26 @@
                         </div>
                         <div class="col-12 col-md-7">
                             <form id="contact-form" class="contacts__form form" action="#" method="POST">
-                                <p class="form__title thanks">Спасибо</p>
-                                <p class="form__text thanks">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.
+                                <p class="form__title form__thanks">Спасибо</p>
+                                <p class="form__text form__thanks">Ваша заявка отправлена! В ближайшее время с вами свяжется
+                                    менеджер.
                                 </p>
-                                <p class="form__title record">Быстрая запись</p>
-                                <p class="form__text record">Наш менеджер перезвонит в течение нескольких минут, уточнит
+                                <p class="form__title form__record">Быстрая запись</p>
+                                <p class="form__text form__record">Наш менеджер перезвонит в течение нескольких минут, уточнит
                                     подробности и согласует время.
                                 </p>
 
-                                <input class="form__input record" type="text" name="name" id="" placeholder="Ваше имя"
-                                    required>
+                                <input class="form__input form__record" inputmode="text" name="name" id="" placeholder="Ваше имя">
 
 
-                                <input class="form__input record" type="tel" name="phone" id=""
-                                    placeholder="+7 (___) ___-__-__" required>
+                                <input data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="numeric" class="form__input form__record" type="tel" name="phone" id=""
+                                    placeholder="+7 (___) ___-__-__">
 
-                                <button class="btn form__btn record">
+                                <button class="btn form__btn form__record">
                                     Записаться
                                 </button>
-                                <p class="form__agreement record">Нажимая на кнопку вы соглашаетесь с <a href="##">обработкой
+                                <p class="form__agreement form__record">Нажимая на кнопку вы соглашаетесь с <a
+                                        href="##">обработкой
                                         персональных данных</a></p>
                                 <div class="loader">
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -609,33 +610,33 @@
 
     <!-- Форма в модальном окне -->
     <div style="display: none;">
-        <form id="hidden-form" class="form" action="#" method="POST">
-            <p class="form__title thanks">Спасибо</p>
-            <p class="form__text thanks">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.
+        <form id="hidden-form" class="form hidden-form" action="#" method="POST">
+            <p class="form__title form__thanks">Спасибо</p>
+            <p class="form__text form__thanks">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.
             </p>
-            <p class="form__title record">Заполните форму записи</p>
-            <p class="form__text record">Наш менеджер перезвонит в течение нескольких минут, уточнит
+            <p class="form__title form__record">Заполните форму записи</p>
+            <p class="form__text form__record">Наш менеджер перезвонит в течение нескольких минут, уточнит
                 подробности и согласует время.
             </p>
 
-            <input class="form__input record" type="text" name="name" placeholder="Ваше имя">
+            <input class="form__input form__record" type="text" name="name" placeholder="Ваше имя">
 
-            <input class="form__input record" type="tel" name="phone" placeholder="+7 (___) ___-__-__">
+            <input data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="numeric" class="form__input form__record" name="phone" placeholder="+7 (___) ___-__-__">
 
-            <select class="form__input record" name="masterId">
-
-            </select>
-
-            <select class="form__input record" name="serviceId">
+            <select class="form__input form__record" name="masterId">
 
             </select>
 
-            <input class="form__input record" type="date" name="visitDate">
+            <select class="form__input form__record" name="serviceId">
 
-            <button class="btn form__btn record">
+            </select>
+
+            <input class="form__input form__record" type="date" name="visitDate">
+
+            <button class="btn form__btn form__record">
                 Записаться
             </button>
-            <p class="form__agreement record">Нажимая на кнопку вы соглашаетесь с <a href="#" target="_blank">обработкой
+            <p class="form__agreement form__record">Нажимая на кнопку вы соглашаетесь с <a href="#" target="_blank">обработкой
                     персональных данных</a></p>
             <div class="loader">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -656,7 +657,7 @@
                 </svg>
             </div>
         </form>
-        
+
         <!-- Скрипты -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>

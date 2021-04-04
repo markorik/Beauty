@@ -5,8 +5,25 @@ export class BaseOrderForm {
         this.formEl = document.getElementById(id);
         this.pending = this.formEl.querySelector('.loader'); 
         this.pending.style.display = "none";  
-        this._switch('.thanks', '.record');
-        this._bindEvents(); 
+        this._switch('.form__thanks', '.form__record');
+
+        // валидатор
+        let handler = this._handleForm.bind(this);
+
+        $(`#${this.formEl.id}`).validate({
+            rules: {
+                name: "required",
+                phone: "required"
+            },
+            messages: {
+                name: "",
+                phone: ""
+            },
+            submitHandler: (form, event) => {
+                event.preventDefault();
+                handler();
+            }
+        });
     }
 
     //Переключение видимости у содержимого формы
@@ -21,13 +38,6 @@ export class BaseOrderForm {
         }
     } 
     
-    _bindEvents() {
-        this.formEl.addEventListener('submit', (event) => {
-            event.preventDefault();
-            this._handleForm();
-        });
-    }
-
     _getOrderData() {
         return {
             name: this.formEl.elements.name.value,
@@ -38,12 +48,12 @@ export class BaseOrderForm {
         };
     }
 
+    // скрыть сообщение об отправке заявки
     _afterThanks() {
-        this._switch('.thanks', '.record');    
+        this._switch('.form__thanks', '.form__record');    
     }
 
     async _handleForm() {   
-
         // включить лоадер
         this.pending.style.display = "inline-block";      
         setTimeout(async () => {
@@ -51,7 +61,7 @@ export class BaseOrderForm {
                 await ApiService.createOrder(this._getOrderData());
                 this.formEl.reset();                                                                  
                 // спасибо
-                this._switch('.record', '.thanks');
+                this._switch('.form__record', '.form__thanks');
                 setTimeout(this._afterThanks.bind(this), 2000);
                                   
             } catch (error) {
@@ -72,14 +82,24 @@ export class OrderForm extends BaseOrderForm {
         }
     
         _init () {                    
-            this._buildSelect(this.mastersSelect, ApiService.getMasters(), (master) => `${master.surName} ${master.firstName}`);
-            this._buildSelect(this.servicesSelect, ApiService.getSaloonServices(), (service) => `${service.name}`);
+            this._buildSelect(
+                this.mastersSelect,
+                ApiService.getMasters(),
+                (master) => `${master.surName} ${master.firstName}`,
+                '<option value="" disabled selected>Выберите мастера</option>'
+            );
+            this._buildSelect(
+                this.servicesSelect,
+                ApiService.getSaloonServices(),
+                (service) => `${service.name}`,
+                '<option value="" disabled selected>Выберите услугу</option>'
+            );
         }                
     
         // Заполнение выпадающих списков данными с сервера
-        async _buildSelect(elem, loader, getValue) {
+        async _buildSelect(elem, loader, getValue, defaultValue = '') {
             try{
-                elem.innerHTML = '';
+                elem.innerHTML = defaultValue; // placeholder у выпадающего списка
                 const data = await loader;
     
                 data.forEach(val => {
@@ -103,6 +123,7 @@ export class OrderForm extends BaseOrderForm {
             };
         }
 
+        // закрыть модальное окно
         _afterThanks() {
             $.fancybox.close();
         }

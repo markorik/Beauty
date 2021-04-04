@@ -1,6 +1,7 @@
 import { TabsManager } from './tabs.js';
 import { ExpandableText } from './spoiler.js';
 import { BaseOrderForm, OrderForm } from './forms/order-form.js';
+import Inputmask from "inputmask";
 
 window.onload = () => { 
   // развернуть/свернуть текст
@@ -39,33 +40,16 @@ window.onload = () => {
   }
 
   // сбор данных из формы в секции Контакты
-  // const form = document.getElementById('contact-form');
-
   new BaseOrderForm('contact-form');
-  // form.addEventListener('submit', event => {
-  //   event.preventDefault();
-    
-  //   // const {name , phone} = form.elements;
-
-  //   // const formData = {
-  //   //   name: name.value,
-  //   //   phone: phone.value
-  //   // };
-
-  //   // if (!(formData.name && formData.phone)) {
-  //   //   console.log("не все поля заполнены");  
-  //   //   return;
-  //   // }
-  // });
-
- // открытие модального окна с формой записи
+ 
+  // открытие модального окна с формой записи
   const showHidden = document.querySelectorAll('.show');
   for (let btn of showHidden) { 
     btn.addEventListener('click', event => {      
       new OrderForm('hidden-form');      
     }); 
+  }
 }
-
 // слайдер с использованием slicker
 $(document).ready(function(){
     $('.projects__container').slick({
@@ -94,20 +78,11 @@ $(document).ready(function(){
               }
             }
         ]
-      });
-
-      // $('#contact-form').validate({
-      //   rules: {
-      //     name: "required",
-      //     phone: "required"
-      //   },
-      //   messages: {
-      //     name: "",
-      //     phone: ""
-      //   }
-      // });
+      });     
+      
+      Inputmask().mask(document.querySelectorAll("input"));
   });
-}
+
    
   
 
