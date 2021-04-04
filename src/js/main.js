@@ -1,6 +1,6 @@
 import { TabsManager } from './tabs.js';
 import { ExpandableText } from './spoiler.js';
-import { OrderForm } from './forms/order-form.js';
+import { BaseOrderForm, OrderForm } from './forms/order-form.js';
 
 window.onload = () => { 
   // развернуть/свернуть текст
@@ -39,35 +39,31 @@ window.onload = () => {
   }
 
   // сбор данных из формы в секции Контакты
-  const form = document.getElementById('contact-form');
+  // const form = document.getElementById('contact-form');
 
-  form.addEventListener('submit', event => {
-    event.preventDefault();
+  new BaseOrderForm('contact-form');
+  // form.addEventListener('submit', event => {
+  //   event.preventDefault();
     
-    const {name , phone} = form.elements;
+  //   // const {name , phone} = form.elements;
 
-    const formData = {
-      name: name.value,
-      phone: phone.value
-    };
+  //   // const formData = {
+  //   //   name: name.value,
+  //   //   phone: phone.value
+  //   // };
 
-    if (!(formData.name && formData.phone)) {
-      console.log("не все поля заполнены");  
-      return;
-    }
-
-    console.log("OK");
-    form.reset();
-    console.log(formData);
-  });
+  //   // if (!(formData.name && formData.phone)) {
+  //   //   console.log("не все поля заполнены");  
+  //   //   return;
+  //   // }
+  // });
 
  // открытие модального окна с формой записи
   const showHidden = document.querySelectorAll('.show');
   for (let btn of showHidden) { 
     btn.addEventListener('click', event => {      
-      new OrderForm();      
+      new OrderForm('hidden-form');      
     }); 
-
 }
 
 // слайдер с использованием slicker
@@ -100,18 +96,17 @@ $(document).ready(function(){
         ]
       });
 
-      $('#contact-form').validate({
-        rules: {
-          name: "required",
-          phone: "required"
-        },
-        messages: {
-          name: "",
-          phone: ""
-        }
-      });
+      // $('#contact-form').validate({
+      //   rules: {
+      //     name: "required",
+      //     phone: "required"
+      //   },
+      //   messages: {
+      //     name: "",
+      //     phone: ""
+      //   }
+      // });
   });
-
 }
    
   

@@ -1,77 +1,26 @@
 import ApiService from '../services/api-service';
 
-export class OrderForm {
-    constructor() {
-        this.pending = false;
-        this.formEl = document.getElementById('hidden-form');                
-        this.mastersSelect = this.formEl.elements.masterId;
-        this.servicesSelect = this.formEl.elements.serviceId;      
-        this._init();
-        this._bindEvents();
+export class BaseOrderForm {
+    constructor(id) {
+        this.formEl = document.getElementById(id);
+        this.pending = this.formEl.querySelector('.loader'); 
+        this.pending.style.display = "none";  
+        this._switch('.thanks', '.record');
+        this._bindEvents(); 
     }
 
-    _init () {
-        this.formEl.elements.name.style.display = "inline-block";
-        this.formEl.elements.phone.style.display = "inline-block";
-        this.formEl.elements.masterId.style.display = "inline-block";
-        this.formEl.elements.serviceId.style.display = "inline-block";
-        this.formEl.elements.visitDate.style.display = "inline-block";
-        
-        // this._buildMastersSelect();
-        // this._buildServicesSelect();
-
-        this._buildSelect(this.mastersSelect, ApiService.getMasters(), (master) => `${master.surName} ${master.firstName}`);
-        this._buildSelect(this.servicesSelect, ApiService.getSaloonServices(), (service) => `${service.name}`);
-    }
-
-    async _buildSelect(elem, loader, getValue) {
-        try{
-            elem.innerHTML = '';
-            const data = await loader;
-
-            data.forEach(val => {
-                const option = document.createElement('option');
-                option.value = val.id;
-                option.textContent = getValue(val);
-                elem.add(option);
-            });
-        } catch(error) {
-            console.log(error);
+    //Переключение видимости у содержимого формы
+    _switch(tohide, toshow) {
+        let viz = this.formEl.querySelectorAll(tohide);
+        for (let i of viz) {        
+            i.style.display = "none";
         }
-    }
-
-    // async _buildMastersSelect() {
-    //     try{
-    //         this.mastersSelect.innerHTML = '';
-    //         const masters = await ApiService.getMasters();
-
-    //         masters.forEach(master => {
-    //             const option = document.createElement('option');
-    //             option.value = master.id;
-    //             option.textContent = `${master.surName} ${master.firstName}`;
-    //             this.mastersSelect.add(option);
-    //         });
-    //     } catch(error) {
-    //         console.log(error);
-    //     }
-    // }
-
-    // async _buildServicesSelect() {
-    //     try{
-    //         this.servicesSelect.innerHTML = '';
-    //         const services = await ApiService.getSaloonServices();
-
-    //         services.forEach(service => {
-    //             const option = document.createElement('option');
-    //             option.value = service.id;
-    //             option.textContent = `${service.name}`;
-    //             this.servicesSelect.add(option);
-    //         });
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
-
+        viz = this.formEl.querySelectorAll(toshow);
+        for (let i of viz) {
+            i.style.display = "inline-block";
+        }
+    } 
+    
     _bindEvents() {
         this.formEl.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -79,39 +28,82 @@ export class OrderForm {
         });
     }
 
-    async _handleForm() {
-        const orderData = {
+    _getOrderData() {
+        return {
             name: this.formEl.elements.name.value,
             phone: this.formEl.elements.phone.value,
-            masterId: this.formEl.elements.masterId.value,
-            serviceId: this.formEl.elements.serviceId.value,
-            visitDate: this.formEl.elements.visitDate.value,
+            masterId: "",
+            serviceId: "",
+            visitDate: "",
         };
+    }
 
-       this._togglePendingState();
+    _afterThanks() {
+        this._switch('.thanks', '.record');    
+    }
 
+    async _handleForm() {   
+
+        // включить лоадер
+        this.pending.style.display = "inline-block";      
         setTimeout(async () => {
             try {
-                await ApiService.createOrder(orderData);
-                this.formEl.reset();                    
-                //сообщить об успехе
-                this.formEl.elements.name.style.display = "none";
-                this.formEl.elements.phone.style.display = "none";
-                this.formEl.elements.masterId.style.display = "none";
-                this.formEl.elements.serviceId.style.display = "none";
-                this.formEl.elements.visitDate.style.display = "none";
-                    //закрыть модальное окно
-                // $.fancybox.close();
+                await ApiService.createOrder(this._getOrderData());
+                this.formEl.reset();                                                                  
+                // спасибо
+                this._switch('.record', '.thanks');
+                setTimeout(this._afterThanks.bind(this), 2000);
+                                  
             } catch (error) {
                 console.error(error);  
-            } finally {
-                this._togglePendingState();
-            } 
-        }, 0);
-    }
-
-    _togglePendingState() {
-        this.pending = !this.pending;
-        this.formEl.classList.toggle('hidden-form_pending', this.pending); 
+            } finally {                
+                // убрать лоадер
+                this.pending.style.display = "none";     
+            }
+        }, 2000);        
     }
 }
+export class OrderForm extends BaseOrderForm {
+        constructor(id) {        
+            super(id);               
+            this.mastersSelect = this.formEl.elements.masterId;
+            this.servicesSelect = this.formEl.elements.serviceId;      
+            this._init();
+        }
+    
+        _init () {                    
+            this._buildSelect(this.mastersSelect, ApiService.getMasters(), (master) => `${master.surName} ${master.firstName}`);
+            this._buildSelect(this.servicesSelect, ApiService.getSaloonServices(), (service) => `${service.name}`);
+        }                
+    
+        // Заполнение выпадающих списков данными с сервера
+        async _buildSelect(elem, loader, getValue) {
+            try{
+                elem.innerHTML = '';
+                const data = await loader;
+    
+                data.forEach(val => {
+                    const option = document.createElement('option');
+                    option.value = val.id;
+                    option.textContent = getValue(val);
+                    elem.add(option);
+                });
+            } catch(error) {
+                console.log(error);
+            }
+        }
+    
+        _getOrderData() {
+            return {
+                name: this.formEl.elements.name.value,
+                phone: this.formEl.elements.phone.value,
+                masterId: this.formEl.elements.masterId.value,
+                serviceId: this.formEl.elements.serviceId.value,
+                visitDate: this.formEl.elements.visitDate.value,
+            };
+        }
+
+        _afterThanks() {
+            $.fancybox.close();
+        }
+    }
