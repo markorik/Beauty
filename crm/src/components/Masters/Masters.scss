@@ -1,0 +1,10 @@
+.Masters {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px -15px 0;
+    
+    &__item {
+        flex: 0 1 calc(20% - 30px);
+        margin: 15px 15px 0;
+    }
+}
