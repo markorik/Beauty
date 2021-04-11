@@ -28,14 +28,8 @@ export class BaseOrderForm {
 
     //Переключение видимости у содержимого формы
     _switch(tohide, toshow) {
-        let viz = this.formEl.querySelectorAll(tohide);
-        for (let i of viz) {        
-            i.style.display = "none";
-        }
-        viz = this.formEl.querySelectorAll(toshow);
-        for (let i of viz) {
-            i.style.display = "inline-block";
-        }
+        this.formEl.querySelector(tohide).style.display = "none";
+        this.formEl.querySelector(toshow).style.display = "inline-block";
     } 
     
     _getOrderData() {
@@ -55,22 +49,20 @@ export class BaseOrderForm {
 
     async _handleForm() {   
         // включить лоадер
-        this.pending.style.display = "inline-block";      
-        setTimeout(async () => {
-            try {
-                await ApiService.createOrder(this._getOrderData());
-                this.formEl.reset();                                                                  
-                // спасибо
-                this._switch('.form__record', '.form__thanks');
-                setTimeout(this._afterThanks.bind(this), 2000);
-                                  
-            } catch (error) {
-                console.error(error);  
-            } finally {                
-                // убрать лоадер
-                this.pending.style.display = "none";     
-            }
-        }, 2000);        
+        this.pending.style.display = "inline-block";              
+        try {
+            await ApiService.createOrder(this._getOrderData());
+            this.formEl.reset();                                                                  
+            // спасибо
+            this._switch('.form__record', '.form__thanks');
+            setTimeout(this._afterThanks.bind(this), 2000);
+                                
+        } catch (error) {
+            console.error(error);  
+        } finally {                
+            // убрать лоадер
+            this.pending.style.display = "none";     
+        }               
     }
 }
 export class OrderForm extends BaseOrderForm {

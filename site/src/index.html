@@ -23,10 +23,10 @@
                     <div id="burger" class="burger">
                         <a href="javascript:void(0)" class="burger__close burger__link">&times;</a>
                         <div class="burger__items">
-                            <a href="#price" class="burger__link">УСЛУГИ И ЦЕНЫ</a>
-                            <a href="#masters" class="burger__link">МАСТЕРА</a>
-                            <a href="#projects" class="burger__link">НАШИ РАБОТЫ</a>
-                            <a href="#contacts" class="burger__link">КОНТАКТЫ</a>
+                            <a href="#price" class="burger__link">Услуги&nbsp;и&nbsp;цены</a>
+                            <a href="#masters" class="burger__link">Мастера</a>
+                            <a href="#projects" class="burger__link">Наши&nbsp;работы</a>
+                            <a href="#contacts" class="burger__link">Контакты</a>
                         </div>
                     </div>
                     <div class="header__menu">
@@ -536,27 +536,31 @@
                         </div>
                         <div class="col-12 col-md-7">
                             <form id="contact-form" class="contacts__form form" action="#" method="POST">
-                                <p class="form__title form__thanks">Спасибо</p>
-                                <p class="form__text form__thanks">Ваша заявка отправлена! В ближайшее время с вами свяжется
-                                    менеджер.
-                                </p>
-                                <p class="form__title form__record">Быстрая запись</p>
-                                <p class="form__text form__record">Наш менеджер перезвонит в течение нескольких минут, уточнит
-                                    подробности и согласует время.
-                                </p>
+                                <div class="form__thanks">
+                                    <p class="form__title">Спасибо</p>
+                                    <p class="form__text">Ваша заявка отправлена! В ближайшее время с вами свяжется
+                                        менеджер.
+                                    </p>
+                                </div>
+                                <div class="form__record">
+                                    <p class="form__title">Быстрая запись</p>
+                                    <p class="form__text">Наш менеджер перезвонит в течение нескольких минут, уточнит
+                                        подробности и согласует время.
+                                    </p>
 
-                                <input class="form__input form__record" inputmode="text" name="name" id="" placeholder="Ваше имя">
+                                    <input class="form__input" inputmode="text" name="name" id="" placeholder="Ваше имя">
 
 
-                                <input data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="numeric" class="form__input form__record" type="tel" name="phone" id=""
-                                    placeholder="+7 (___) ___-__-__">
+                                    <input data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="numeric" class="form__input" type="tel" name="phone" id=""
+                                        placeholder="+7 (___) ___-__-__">
 
-                                <button class="btn form__btn form__record">
-                                    Записаться
-                                </button>
-                                <p class="form__agreement form__record">Нажимая на кнопку вы соглашаетесь с <a
-                                        href="##">обработкой
-                                        персональных данных</a></p>
+                                    <button class="btn form__btn">
+                                        Записаться
+                                    </button>
+                                    <p class="form__agreement">Нажимая на кнопку вы соглашаетесь с <a
+                                            href="##">обработкой
+                                            персональных данных</a></p>
+                                </div>                                                                
                                 <div class="loader">
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
@@ -611,33 +615,37 @@
     <!-- Форма в модальном окне -->
     <div style="display: none;">
         <form id="hidden-form" class="form hidden-form" action="#" method="POST">
-            <p class="form__title form__thanks">Спасибо</p>
-            <p class="form__text form__thanks">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.
-            </p>
-            <p class="form__title form__record">Заполните форму записи</p>
-            <p class="form__text form__record">Наш менеджер перезвонит в течение нескольких минут, уточнит
-                подробности и согласует время.
-            </p>
+            <div class="form__thanks">
+                <p class="form__title">Спасибо</p>
+                <p class="form__text">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.
+                </p>
+            </div>
+            <div class="form__record">
+                <p class="form__title">Заполните форму записи</p>
+                <p class="form__text">Наш менеджер перезвонит в течение нескольких минут, уточнит
+                    подробности и согласует время.
+                 </p>
 
-            <input class="form__input form__record" type="text" name="name" placeholder="Ваше имя">
+                <input class="form__input" type="text" name="name" placeholder="Ваше имя">
 
-            <input data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="numeric" class="form__input form__record" name="phone" placeholder="+7 (___) ___-__-__">
+                <input data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="numeric" class="form__input" name="phone" placeholder="+7 (___) ___-__-__">
 
-            <select class="form__input form__record" name="masterId">
+                <select class="form__input" name="masterId">
 
-            </select>
+                </select>
 
-            <select class="form__input form__record" name="serviceId">
+                <select class="form__input" name="serviceId">
 
-            </select>
+                </select>
 
-            <input class="form__input form__record" type="date" name="visitDate">
+                <input class="form__input" type="date" name="visitDate">
 
-            <button class="btn form__btn form__record">
-                Записаться
-            </button>
-            <p class="form__agreement form__record">Нажимая на кнопку вы соглашаетесь с <a href="#" target="_blank">обработкой
-                    персональных данных</a></p>
+                <button class="btn form__btn">
+                    Записаться
+                </button>
+                <p class="form__agreement">Нажимая на кнопку вы соглашаетесь с <a href="#" target="_blank">обработкой
+                        персональных данных</a></p>
+            </div>            
             <div class="loader">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"
