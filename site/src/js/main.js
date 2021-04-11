@@ -1,5 +1,7 @@
 import { TabsManager } from './tabs.js';
 import { ExpandableText } from './spoiler.js';
+import { BaseOrderForm, OrderForm } from './forms/order-form.js';
+import Inputmask from "inputmask";
 
 window.onload = () => { 
   // развернуть/свернуть текст
@@ -37,25 +39,17 @@ window.onload = () => {
     });
   }
 
-  // сбор данных из формы
-  const form = document.getElementById('contact-form');
-
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    
-    const {name , phone} = form.elements;
-
-    const formData = {
-      name: name.value,
-      phone: phone.value
-    };
-
-    form.reset();
-    console.log(formData);
-  });
-
+  // сбор данных из формы в секции Контакты
+  new BaseOrderForm('contact-form');
+ 
+  // открытие модального окна с формой записи
+  const showHidden = document.querySelectorAll('.show');
+  for (let btn of showHidden) { 
+    btn.addEventListener('click', event => {      
+      new OrderForm('hidden-form');      
+    }); 
+  }
 }
-
 // слайдер с использованием slicker
 $(document).ready(function(){
     $('.projects__container').slick({
@@ -84,9 +78,10 @@ $(document).ready(function(){
               }
             }
         ]
-      });
+      });     
+      
+      Inputmask().mask(document.querySelectorAll("input"));
   });
-
 
    
   

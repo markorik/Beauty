@@ -1,0 +1,14 @@
+.loader{    
+    height: 35px;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto;
+    display: none;
+    vertical-align: middle;
+  } 
+
+svg path,
+svg rect{
+  fill: $accent-color;
+}

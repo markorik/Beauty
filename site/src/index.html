@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
@@ -23,12 +23,12 @@
                     <div id="burger" class="burger">
                         <a href="javascript:void(0)" class="burger__close burger__link">&times;</a>
                         <div class="burger__items">
-                          <a href="#price" class="burger__link">УСЛУГИ И ЦЕНЫ</a>
-                          <a href="#masters" class="burger__link">МАСТЕРА</a>
-                          <a href="#projects" class="burger__link">НАШИ РАБОТЫ</a>
-                          <a href="#contacts" class="burger__link">КОНТАКТЫ</a>                         
-                        </div>                       
-                    </div>                    
+                            <a href="#price" class="burger__link">УСЛУГИ И ЦЕНЫ</a>
+                            <a href="#masters" class="burger__link">МАСТЕРА</a>
+                            <a href="#projects" class="burger__link">НАШИ РАБОТЫ</a>
+                            <a href="#contacts" class="burger__link">КОНТАКТЫ</a>
+                        </div>
+                    </div>
                     <div class="header__menu">
                         <div id="burger-open" class="burger__open header__burger">&#9776;</div>
                         <div class="header__logo logo">
@@ -58,7 +58,7 @@
                         <p class="header__text">
                             Идеальный образ за 60 минут
                         </p>
-                        <button class="header__btn btn btn_large">
+                        <button data-fancybox data-src="#hidden-form" class="header__btn btn btn_large show">
                             Записаться онлайн
                         </button>
                     </div>
@@ -91,16 +91,25 @@
                             </div>
                             <div class="about__text expand">
                                 <p>
-                                    Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму, а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.
-                                </p>    
+                                    Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где
+                                    гармония обретает форму, а внешность становится отражением внутреннего мира. Новая
+                                    жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их
+                                    индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.
+                                </p>
                                 <p class="expand__text">
-                                    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Заглавных обеспечивает города парадигматическая на берегу своего если переулка путь жизни продолжил несколько, коварный раз, назад грамматики прямо которое. До заманивший о скатился заголовок своих образ использовало страну дороге однажды там он пояс вдали дорогу залетают это ведущими риторический семь инициал бросил, деревни путь!
-                                </p>                                
+                                    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+                                    Заглавных обеспечивает города парадигматическая на берегу своего если переулка путь
+                                    жизни продолжил несколько, коварный раз, назад грамматики прямо которое. До
+                                    заманивший о скатился заголовок своих образ использовало страну дороге однажды там
+                                    он пояс вдали дорогу залетают это ведущими риторический семь инициал бросил, деревни
+                                    путь!
+                                </p>
                                 <a class="about__link expand__link">Развернуть</a>
                             </div>
                         </div>
                         <div class="col-sm-12 col-lg-5">
-                            <a class="about__video-title" data-fancybox href="https://www.youtube.com/watch?v=1OnqAHt35F0">
+                            <a class="about__video-title" data-fancybox
+                                href="https://www.youtube.com/watch?v=1OnqAHt35F0">
                                 <div class="about__video" style="background-image: url('./images/about-video.jpg');">
                                     <div class="about__label">
                                         <div>
@@ -160,7 +169,7 @@
                                 <div class="card__caption">Маникюр</div>
                                 <div class="card__text">Аппаратный, комбинированный или классический.</div>
                             </div>
-                            <button class="card__btn btn popular__btn">Записаться</button>
+                            <button data-fancybox data-src="#hidden-form" class="card__btn btn show">Записаться</button>
                         </div>
                         <div class="col-12 col-sm-6 col-md-4 popular__card card">
                             <div class="card__image">
@@ -172,7 +181,7 @@
                                     топа.
                                     Каждый слой полимеризуется в LED-лампе.</div>
                             </div>
-                            <button class="card__btn btn">Записаться</button>
+                            <button data-fancybox data-src="#hidden-form" class="card__btn btn show">Записаться</button>
                         </div>
                         <div class="col-12 col-sm-6 col-md-4 popular__card card">
                             <div class="card__image">
@@ -183,7 +192,7 @@
                                 <div class="card__text">Выполняется в одноразовых перчатках наполненных увлажняющим
                                     лосьоном.</div>
                             </div>
-                            <button class="card__btn btn">Записаться</button>
+                            <button data-fancybox data-src="#hidden-form" class="card__btn btn show">Записаться</button>
                         </div>
                         <div class="col-12 col-sm-6 col-md-4 popular__card card">
                             <div class="card__image">
@@ -193,7 +202,7 @@
                                 <div class="card__caption">Педикюр</div>
                                 <div class="card__text">Аппаратный, комбинированный или классический.</div>
                             </div>
-                            <button class="card__btn btn">Записаться</button>
+                            <button data-fancybox data-src="#hidden-form" class="card__btn btn show">Записаться</button>
                         </div>
                         <div class="col-12 col-sm-6 col-md-4 popular__card card">
                             <div class="card__image">
@@ -205,7 +214,7 @@
                                     также выводит токсины и укрепляет суставы.
                                 </div>
                             </div>
-                            <button class="card__btn btn">Записаться</button>
+                            <button data-fancybox data-src="#hidden-form" class="card__btn btn show">Записаться</button>
                         </div>
                     </div>
                 </div>
@@ -214,7 +223,7 @@
             <section id="price" class="section price">
                 <div class="container">
                     <h2 class="section__title">Услуги и цены</h2>
-                    <div id = "tabs" class="tabs">
+                    <div id="tabs" class="tabs">
                         <nav class="price__tabs nav tabs__links">
                             <a class="price__section nav__link">Стрижка&nbsp;и&nbsp;укладка</a>
                             <a class="price__section nav__link">Косметология</a>
@@ -312,7 +321,7 @@
                                 </div>
                                 <div class="col-4 col-sm-2">
                                     <p class="price__price">200 ₽</p>
-                                </div>                            
+                                </div>
                             </div>
                             <!-- 3 закладка -->
                             <div class="row tabs__item">
@@ -322,10 +331,10 @@
                                 </div>
                                 <div class="col-4 col-sm-2">
                                     <p class="price__price">200 ₽</p>
-                                </div>                            
+                                </div>
                             </div>
                             <!-- 4 закладка -->
-                            <div class="row tabs__item">                                
+                            <div class="row tabs__item">
                                 <div class="col-8 col-sm-4">
                                     <p class="price__service">Мужская стрижка</p>
                                     <p class="price__comment">Короткие волосы</p>
@@ -339,7 +348,7 @@
                                 </div>
                                 <div class="col-4 col-sm-2">
                                     <p class="price__price">400 ₽</p>
-                                </div>                            
+                                </div>
                             </div>
                             <!-- 5 закладка -->
                             <div class="row tabs__item">
@@ -356,7 +365,7 @@
                                 </div>
                                 <div class="col-4 col-sm-2">
                                     <p class="price__price">0 ₽</p>
-                                </div>                    
+                                </div>
                             </div>
                             <!-- 6 закладка -->
                             <div class="row tabs__item">
@@ -366,7 +375,7 @@
                                 </div>
                                 <div class="col-4 col-sm-2">
                                     <p class="price__price">35000 ₽</p>
-                                </div>                 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -380,8 +389,10 @@
                     <div class="row">
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <div class="masters__photo master-card__photo"
-                                    style="background-image: url('./images/master-Irina.jpg');"></div>
+                                <a data-fancybox data-src="#hidden-form" class="show">
+                                    <div class="masters__photo master-card__photo"
+                                        style="background-image: url('./images/master-Irina.jpg');"></div>
+                                </a>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Краснова Ирина</h4>
                                     <p class="master-card__prof">Мастер ногтевого сервиса</p>
@@ -391,8 +402,10 @@
                         </div>
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <div class="masters__photo master-card__photo"
-                                    style="background-image: url('./images/master-Janna.jpg');"></div>
+                                <a data-fancybox data-src="#hidden-form" class="show">
+                                    <div class="masters__photo master-card__photo"
+                                        style="background-image: url('./images/master-Janna.jpg');"></div>
+                                </a>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Калилова Жанна</h4>
                                     <p class="master-card__prof">Визажист-стилист</p>
@@ -402,8 +415,10 @@
                         </div>
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <div class="masters__photo master-card__photo"
-                                    style="background-image: url('./images/master-Alina.jpg');"></div>
+                                <a data-fancybox data-src="#hidden-form" class="show">
+                                    <div class="masters__photo master-card__photo"
+                                        style="background-image: url('./images/master-Alina.jpg');"></div>
+                                </a>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Киселева Алина</h4>
                                     <p class="master-card__prof">Парикмахер</p>
@@ -413,8 +428,10 @@
                         </div>
                         <div class="col-sm-4 col-md-3">
                             <div class="masters__profile master-card">
-                                <div class="masters__photo master-card__photo"
-                                    style="background-image: url('./images/master-Elena.jpg');"></div>
+                                <a data-fancybox data-src="#hidden-form" class="show">
+                                    <div class="masters__photo master-card__photo"
+                                        style="background-image: url('./images/master-Elena.jpg');"></div>
+                                </a>
                                 <div class="master-card__info">
                                     <h4 class="master-card__name">Иванова Елена</h4>
                                     <p class="master-card__prof">Мастер ногтевого сервиса</p>
@@ -435,9 +452,9 @@
                 <div class="projects__container">
                     <div class="projects__link">
                         <a href="./images/project-1.jpg" data-fancybox>
-                            <div class="projects__card">                                
-                                <img class="projects__img" src="./images/project-1.jpg" alt=""><
-                            </div>
+                            <div class="projects__card">
+                                <img class="projects__img" src="./images/project-1.jpg" alt="">
+                                < </div>
                         </a>
                     </div>
                     <div class="projects__link">
@@ -447,27 +464,27 @@
                             </div>
                         </a>
                     </div>
-                        <div class="projects__link">
-                            <a href="./images/project-3.jpg" data-fancybox>
-                                <div class="projects__card">
-                                    <img class="projects__img" src="./images/project-3.jpg" alt="">
-                                </div>
-                            </a>
-                        </div>   
-                        <div class="projects__link">
-                            <a href="./images/project-4.jpg" data-fancybox>
-                                <div class="projects__card">
-                                    <img class="projects__img" src="./images/project-4.jpg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="projects__link">
-                            <a href="./images/project-3.jpg" data-fancybox>
-                                <div class="projects__card">
-                                    <img class="projects__img" src="./images/project-3.jpg" alt="">
-                                </div>
-                            </a>
-                        </div>                
+                    <div class="projects__link">
+                        <a href="./images/project-3.jpg" data-fancybox>
+                            <div class="projects__card">
+                                <img class="projects__img" src="./images/project-3.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="projects__link">
+                        <a href="./images/project-4.jpg" data-fancybox>
+                            <div class="projects__card">
+                                <img class="projects__img" src="./images/project-4.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="projects__link">
+                        <a href="./images/project-3.jpg" data-fancybox>
+                            <div class="projects__card">
+                                <img class="projects__img" src="./images/project-3.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
             <!-- секция Бренды -->
@@ -519,22 +536,46 @@
                         </div>
                         <div class="col-12 col-md-7">
                             <form id="contact-form" class="contacts__form form" action="#" method="POST">
-                                <p class="form__title">Быстрая запись</p>
-                                <p class="form__text">Наш менеджер перезвонит в течение нескольких минут, уточнит
+                                <p class="form__title form__thanks">Спасибо</p>
+                                <p class="form__text form__thanks">Ваша заявка отправлена! В ближайшее время с вами свяжется
+                                    менеджер.
+                                </p>
+                                <p class="form__title form__record">Быстрая запись</p>
+                                <p class="form__text form__record">Наш менеджер перезвонит в течение нескольких минут, уточнит
                                     подробности и согласует время.
                                 </p>
-                                <div>
-                                    <input class="form__input" type="text" name="name" id="" placeholder="Ваше имя" required>
-                                </div>
-                                <div>
-                                    <input class="form__input" type="tel" name="phone" id=""
-                                        placeholder="+7 (___) ___-__-__" required>
-                                </div>
-                                <button class="btn form__btn">
+
+                                <input class="form__input form__record" inputmode="text" name="name" id="" placeholder="Ваше имя">
+
+
+                                <input data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="numeric" class="form__input form__record" type="tel" name="phone" id=""
+                                    placeholder="+7 (___) ___-__-__">
+
+                                <button class="btn form__btn form__record">
                                     Записаться
                                 </button>
-                                <p class="form__agreement">Нажимая на кнопку вы соглашаетесь с <a href="##">обработкой
+                                <p class="form__agreement form__record">Нажимая на кнопку вы соглашаетесь с <a
+                                        href="##">обработкой
                                         персональных данных</a></p>
+                                <div class="loader">
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+                                        height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;"
+                                        xml:space="preserve">
+                                        <rect x="0" y="0" width="4" height="20" fill="#333">
+                                            <animate attributeName="opacity" attributeType="XML" values="1; .2; 1"
+                                                begin="0s" dur="0.6s" repeatCount="indefinite" />
+                                        </rect>
+                                        <rect x="7" y="0" width="4" height="20" fill="#333">
+                                            <animate attributeName="opacity" attributeType="XML" values="1; .2; 1"
+                                                begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+                                        </rect>
+                                        <rect x="14" y="0" width="4" height="20" fill="#333">
+                                            <animate attributeName="opacity" attributeType="XML" values="1; .2; 1"
+                                                begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+                                        </rect>
+                                    </svg>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -554,9 +595,11 @@
                     </div>
                     <div class="col-6 col-md-8">
                         <nav class="footer__nav nav">
-                            <a class="footer__link nav__link nav__link_mini nav__smooth" href="#price">Услуги&nbsp;и&nbsp;цены</a>
+                            <a class="footer__link nav__link nav__link_mini nav__smooth"
+                                href="#price">Услуги&nbsp;и&nbsp;цены</a>
                             <a class="footer__link nav__link nav__link_mini nav__smooth" href="#masters">Мастера</a>
-                            <a class="footer__link nav__link nav__link_mini nav__smooth" href="#projects">Наши&nbsp;работы</a>
+                            <a class="footer__link nav__link nav__link_mini nav__smooth"
+                                href="#projects">Наши&nbsp;работы</a>
                             <a class="footer__link nav__link nav__link_mini nav__smooth" href="#contacts">Контакты</a>
                         </nav>
                     </div>
@@ -565,14 +608,61 @@
         </footer>
     </div>
 
-    <!-- Скрипты -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Форма в модальном окне -->
+    <div style="display: none;">
+        <form id="hidden-form" class="form hidden-form" action="#" method="POST">
+            <p class="form__title form__thanks">Спасибо</p>
+            <p class="form__text form__thanks">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.
+            </p>
+            <p class="form__title form__record">Заполните форму записи</p>
+            <p class="form__text form__record">Наш менеджер перезвонит в течение нескольких минут, уточнит
+                подробности и согласует время.
+            </p>
 
-    <script src="./js/main.min.js"></script>
-   
+            <input class="form__input form__record" type="text" name="name" placeholder="Ваше имя">
 
+            <input data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="numeric" class="form__input form__record" name="phone" placeholder="+7 (___) ___-__-__">
 
+            <select class="form__input form__record" name="masterId">
 
+            </select>
+
+            <select class="form__input form__record" name="serviceId">
+
+            </select>
+
+            <input class="form__input form__record" type="date" name="visitDate">
+
+            <button class="btn form__btn form__record">
+                Записаться
+            </button>
+            <p class="form__agreement form__record">Нажимая на кнопку вы соглашаетесь с <a href="#" target="_blank">обработкой
+                    персональных данных</a></p>
+            <div class="loader">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"
+                    viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                    <rect x="0" y="0" width="4" height="20" fill="#333">
+                        <animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0s" dur="0.6s"
+                            repeatCount="indefinite" />
+                    </rect>
+                    <rect x="7" y="0" width="4" height="20" fill="#333">
+                        <animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0.2s" dur="0.6s"
+                            repeatCount="indefinite" />
+                    </rect>
+                    <rect x="14" y="0" width="4" height="20" fill="#333">
+                        <animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0.4s" dur="0.6s"
+                            repeatCount="indefinite" />
+                    </rect>
+                </svg>
+            </div>
+        </form>
+
+        <!-- Скрипты -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
+        <script src="./js/main.min.js"></script>
 </body>
