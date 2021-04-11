@@ -19,6 +19,30 @@ export class HttpService {
     return this._handleResponse(response);
   }
 
+  // async delete(path, body) {
+  //   const stringifiedData = JSON.stringify(body);
+
+  //   const response = await fetch(`${this.baseApi}/${path}`, {
+  //     method: 'DELETE',
+  //     body: stringifiedData,
+  //     headers: this.baseHeaders
+  //   });
+
+  //   return this._handleResponse(response);
+  // }
+
+  // async put(path, body) {
+  //   const stringifiedData = JSON.stringify(body);
+
+  //   const response = await fetch(`${this.baseApi}/${path}`, {
+  //     method: 'PUT',
+  //     body: stringifiedData,
+  //     headers: this.baseHeaders
+  //   });
+
+  //   return this._handleResponse(response);
+  // }
+
   async post(path, body) {
     const stringifiedData = JSON.stringify(body);
 
