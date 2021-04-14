@@ -3,16 +3,16 @@ import './scss/App.scss';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from './components/NavBar';
-import HomePage from './pages/Home';
-import MastersPage from './pages/Masters';
-import OrdersPage from './pages/Orders';
-import NotFoundPage from './pages/NotFound';
-import LoginPage from './pages/Login';
+import HomePage from './pages/HomePage';
+import MastersPage from './pages/MastersPage';
+import OrdersPage from './pages/OrdersPage';
+import CustomersPage from './pages/CustomersPage';
+import NotFoundPage from './pages/NotFoundPage';
+import LoginPage from './pages/LoginPage';
 import { AuthProvider } from './contexts/authContext';
 import PrivateRoute from './components/PrivateRoute';
 
 import 'primereact/resources/themes/saga-blue/theme.css';
-// import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/primereact.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
@@ -24,7 +24,7 @@ function App() {
       <AuthProvider>
         <div className="container">
             <header>
-              <h2>Мир красоты</h2>  
+              <h1>Мир красоты</h1>  
               <NavBar />
             </header>   
             
@@ -34,12 +34,16 @@ function App() {
                   <HomePage />
                 </PrivateRoute>
 
-                <PrivateRoute path="/masters">
+                <PrivateRoute exact path="/masters">
                   <MastersPage />
                 </PrivateRoute>
 
-                <PrivateRoute path="/orders">
+                <PrivateRoute exact path="/orders">
                   <OrdersPage />
+                </PrivateRoute>
+
+                <PrivateRoute exact path="/customers">
+                  <CustomersPage />
                 </PrivateRoute>
 
                 <Route path="/login">

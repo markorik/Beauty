@@ -8,6 +8,7 @@ const ROUTES = [
     {to: '/',           title: 'Главная'       },
     {to: '/orders',     title: 'Заявки'     },
     {to: '/masters',      title: 'Мастера'      },
+    {to: '/customers',      title: 'Клиенты'      },
 ];
 
 function NavBar({ location, history }) {
@@ -26,14 +27,12 @@ function NavBar({ location, history }) {
             />
             <Button
                 icon="pi pi-home"
-                // className="p-m-1 p-button-rounded p-button-outlined p-button-secondary"
                 className="p-m-1"
                 tooltip="Главная"
                 onClick={(e) => history.push("/")}
             />
             <Button
                 icon="pi pi-power-off"
-                // className="p-m-1 p-button-rounded p-button-danger p-button-outlined"
                 className="p-m-1 p-button-danger"
                 tooltip="Выйти"
                 onClick={logout}
