@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from 'classnames';
 
 import { Dialog } from 'primereact/dialog';
@@ -42,14 +42,14 @@ export default function MasterDetailsForm({visible, master, onCancel, onSave}) {
     }
 
     const footer = (
-        <>
-            <Button label="Выйти" icon="pi pi-times" className="p-button-text" onClick={cancel} />
+        <React.Fragment>
+            <Button label="Отмена" icon="pi pi-times" className="p-button-text" onClick={cancel} />
             <Button label="Сохранить" icon="pi pi-check" className="p-button-text" onClick={save} />
-        </>
+        </React.Fragment>
     );
 
     return (
-        <Dialog visible={visible} style={{ width: '560px' }} header="Данные о мастере" modal className="p-fluid" footer={footer} onHide={cancel} position="top">
+        <Dialog visible={visible} style={{ width: '560px' }} header="Данные мастера" modal className="p-fluid" footer={footer} onHide={cancel} position="top">
             <div className="p-field">
                 <label htmlFor="surName">Фамилия</label>
                 <InputText value={currentMaster.surName} onChange={(e) => onInputChange(e, 'surName')} required autoFocus className={classNames({ 'p-invalid': submitted && !currentMaster.surName })} />

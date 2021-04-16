@@ -37,7 +37,8 @@ function NavBar({ location, history }) {
                 tooltip="Выйти"
                 onClick={logout}
             />
-        </div>       
+        </div>  
+        <br />     
     </nav>
   ) : null;
 }

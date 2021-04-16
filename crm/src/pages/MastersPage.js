@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { withRouter } from "react-router-dom";
 
 import { Toast } from 'primereact/toast';
@@ -36,7 +36,7 @@ function MastersPage() {
         catch (err) {
             const msg = err?.message || 'Unknown server response';
             toast.current?.show({
-                severity: 'error', summary: 'Error', detail: `Невозможно загрузить список мастеров: ${msg}`, life: 5000
+                severity: 'error', summary: 'Ошибка', detail: `Невозможно загрузить список мастеров: ${msg}`, life: 5000
             });
         }
     }
@@ -51,7 +51,7 @@ function MastersPage() {
             try {
                 let _updateMaster = await ApiService.updateMaster(currentMaster.id, newData);
                 toast.current.show({
-                    severity: 'success', summary: 'Success', life: 3000,
+                    severity: 'success', summary: 'Успешно', life: 3000,
                     detail: `Данные мастера '${_updateMaster.fullName}' изменены`
                 });
                 await fetchData();
@@ -59,7 +59,7 @@ function MastersPage() {
             catch(err) {
                 const msg = err?.message || 'Unknown server response';
                 toast.current.show({
-                    severity: 'error', summary: 'Error', detail: `Невозможно изменить данные: ${msg}`, life: 5000
+                    severity: 'error', summary: 'Ошибка', detail: `Невозможно изменить данные: ${msg}`, life: 5000
                 });
             }
         }
@@ -68,15 +68,15 @@ function MastersPage() {
             try {
                 let _createMaster = await ApiService.createMaster(newData);
                 toast.current.show({
-                    severity: 'success', summary: 'Success', life: 3000,
+                    severity: 'success', summary: 'Успешно', life: 3000,
                     detail: `Мастер '${_createMaster.fullName}' создан`
                 });
                 await fetchData();
             }
             catch(err) {
                 const msg = err?.message || 'Unknown server response';
-                toast.current.show({
-                    severity: 'error', summary: 'Error', detail: `Невозможно создать мастера: ${msg}`, life: 5000
+                toast.current?.show({
+                    severity: 'error', summary: 'Ошибка', detail: `Невозможно создать мастера: ${msg}`, life: 5000
                 });
             }
         }
@@ -88,14 +88,14 @@ function MastersPage() {
         try {
             await ApiService.deleteMaster(currentMaster.id);
             toast.current.show({
-                severity: 'success', summary: 'Success', detail: 'Мастер удалён', life: 3000
+                severity: 'success', summary: 'Успешно', detail: 'Мастер удалён', life: 3000
             });
             await fetchData();
         }
         catch(err) {
             const msg = err?.message || 'Unknown server response';
             toast.current.show({
-                severity: 'error', summary: 'Error', detail: `Невозможно удалить мастера: ${msg}`, life: 5000
+                severity: 'error', summary: 'Ошибка', detail: `Невозможно удалить мастера: ${msg}`, life: 5000
             });
         }
         setDeleteMasterDialog(false);
@@ -120,15 +120,15 @@ function MastersPage() {
 
 
     const deleteMasterDialogFooter = (
-        <>
-            <Button label="No" icon="pi pi-times" className="p-button-text" onClick={e => setDeleteMasterDialog(false)} />
-            <Button label="Yes" icon="pi pi-check" className="p-button-text p-button-danger" onClick={deleteCurrentMaster} />
-        </>
+        <React.Fragment>
+            <Button label="Нет" icon="pi pi-times" className="p-button-text" onClick={e => setDeleteMasterDialog(false)} />
+            <Button label="Да" icon="pi pi-check" className="p-button-text p-button-danger" onClick={deleteCurrentMaster} />
+        </React.Fragment>
     );
 
     
     return (
-        <>
+        <React.Fragment>
             <Toast ref={toast} />
 
             <Masters
@@ -161,7 +161,7 @@ function MastersPage() {
                     </div>
                 </div>
             </Dialog>
-        </>
+        </React.Fragment>
     );
 }
 

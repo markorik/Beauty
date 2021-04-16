@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { withRouter } from "react-router-dom";
 
 import ApiService from '../api/api_service';
@@ -18,7 +18,7 @@ function CustomersPage() {
         catch (err) {
             const msg = err?.message || 'Unknown server response';
             toast.current?.show({
-                severity: 'error', summary: 'Error', detail: `Невозможно загрузить список клиентов с сервера: ${msg}`, life: 5000
+                severity: 'error', summary: 'Error', detail: `Невозможно загрузить список клиентов: ${msg}`, life: 5000
             });
         }
     }
@@ -28,13 +28,9 @@ function CustomersPage() {
     }, []);
     
     return (
-        <>
-            <h3>Клиенты</h3>
-
-            <Customers
-                customers={customers}
-            />
-        </>
+        <Customers
+            customers={customers}
+        />
     );
 }
 

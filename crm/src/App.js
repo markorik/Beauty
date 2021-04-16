@@ -18,48 +18,46 @@ import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
 
-function App() {    
-  return (
-    <Router>
-      <AuthProvider>
-        <div className="container">
-            <header>
-              <h1>Мир красоты</h1>  
-              <NavBar />
-            </header>   
-            
-            <main>
-              <Switch>
-                <PrivateRoute exact path="/">
-                  <HomePage />
-                </PrivateRoute>
+function App() {
+	return (
+		<Router>
+			<AuthProvider>
+				<div className="container">
+					<header>
+						<h1>Мир красоты</h1>
+						<NavBar />
+					</header>
 
-                <PrivateRoute exact path="/masters">
-                  <MastersPage />
-                </PrivateRoute>
+					<main>
+						<Switch>
+							<Route path="/login">
+								<LoginPage />
+							</Route>
+							<PrivateRoute exact path="/">
+								<HomePage />
+							</PrivateRoute>
 
-                <PrivateRoute exact path="/orders">
-                  <OrdersPage />
-                </PrivateRoute>
+							<PrivateRoute exact path="/masters">
+								<MastersPage />
+							</PrivateRoute>
 
-                <PrivateRoute exact path="/customers">
-                  <CustomersPage />
-                </PrivateRoute>
+							<PrivateRoute exact path="/orders">
+								<OrdersPage />
+							</PrivateRoute>
 
-                <Route path="/login">
-                  <LoginPage />
-                </Route>
+							<PrivateRoute exact path="/customers">
+								<CustomersPage />
+							</PrivateRoute>
+							<Route path="*">
+								<NotFoundPage />
+							</Route>
+						</Switch>
 
-                <Route path="*">
-                  <NotFoundPage />
-                </Route>
-              </Switch>
-
-            </main>
-        </div>
-    </AuthProvider>    
-  </Router>
-  );
+					</main>
+				</div>
+			</AuthProvider>
+		</Router>
+	);
 }
 
 export default App;
