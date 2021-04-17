@@ -25,7 +25,6 @@ function OrdersPage() {
     };
 
     const [orders, setOrders] = useState([]);
-    const [customers, setCustomers] = useState([]);
     const [masters, setMasters] = useState([]);
     const [services, setServices] = useState([]);
 
@@ -37,16 +36,15 @@ function OrdersPage() {
 
     const fetchData = async () => {
         try {
-            const [_orders, _customers, _masters, _services] = await Promise.all([ApiService.readOrders(), ApiService.readCustomers(), ApiService.readMasters(), ApiService.readServices()]);
-        
+            const [_orders, _masters, _services] = await Promise.all([ApiService.readOrders(), ApiService.readMasters(), ApiService.readServices()]);
+
             // преобразование date strings в Date objects
             _orders.forEach((v) => {
                 v.visitDate = v.visitDate ? new Date(v.visitDate) : null;
                 v.createdDate = v.createdDate ? new Date(v.createdDate) : null;
             });
-    
+
             setOrders(_orders);
-            setCustomers(_customers);
             setMasters(_masters);
             setServices(_services);
         }
@@ -66,30 +64,17 @@ function OrdersPage() {
     const saveOrder = async (newData) => {
         if (currentOrder.id) {
             // сохранение существующей заявки
-            
+
             /*  ATTENTION!
-                При попытке сохранения нормальных данных на сервер (PATCH /api/orders/3):
-                {
-                    "customerId":2,
-                    "visitDate":"2020-05-25T10:27:33.153Z",
-                    "masterId":4,
-                    "serviceId":5,
-                    "status":"Closed",
-                    "finishStatus":"Success"
-                }
+                При попытке сохранения нормальных данных на сервер (PATCH /api/orders/)
                 прилетает ошибка {
                     "statusCode": 500,
                     "message": "Internal server error"
                 }
-                после чего ломается даже GET /api/orders с такой же ошибкой.
-                               
-                Это проявляется и при работе с сервером напрямую через swagger:
-                http://localhost:3001/api/swagger/#/Orders/OrdersController_updateOrder
 
-                Когда сервер будет работать нормально, строчку с ApiService.updateOrder можно расскоментировать.
-
+                Когда сервер будет работать нормально, строчку с ApiService.updateOrder можно раскомментировать.
             */
-           
+
             let request = {
                 customerId: newData.customer.id,
                 visitDate: newData.visitDate,
@@ -104,8 +89,8 @@ function OrdersPage() {
             let _updatedOrder = currentOrder;
             toast.current.show({
                 severity: 'success', summary: 'Успешно', life: 3000,
-                detail: `Заявка для '${_updatedOrder.customer.fullName}' at '${_updatedOrder.visitDate}' изменена`
-            });            
+                detail: `Заявка для '${_updatedOrder.customer.fullName}' изменена`
+            });
             await fetchData();
         }
         else {
@@ -121,7 +106,7 @@ function OrdersPage() {
             let _createdOrder = await ApiService.createOrder(request);
             toast.current.show({
                 severity: 'success', summary: 'Успешно', life: 3000,
-                detail: `Заявка для '${_createdOrder.customer.fullName}' at '${_createdOrder.visitDate}' создана`
+                detail: `Заявка для '${_createdOrder.customer.fullName}' создана`
             });
             await fetchData();
         }
@@ -137,7 +122,7 @@ function OrdersPage() {
             });
             await fetchData();
         }
-        catch(err) {
+        catch (err) {
             const msg = err.message || 'Unknown server response';
             toast.current.show({
                 severity: 'error', summary: 'Ошибка', life: 5000, detail: `Невозможно удалить заявку: ${msg}`
@@ -171,7 +156,6 @@ function OrdersPage() {
         </React.Fragment>
     );
 
-
     return (
         <div>
             <Toast ref={toast} />
@@ -187,7 +171,6 @@ function OrdersPage() {
             <OrderDetailsForm
                 visible={editOrderDialog}
                 order={currentOrder}
-                customers={customers}
                 masters={masters}
                 services={services}
                 onCancel={() => setEditOrderDialog(false)}

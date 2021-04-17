@@ -12,25 +12,11 @@ export class ApiService extends HttpService {
   }
 
   // Customers
-
-  createCustomer(customerData) {
-    return this.post('customers', customerData);
-  }
-
   readCustomers() {
     return this.get('customers');
   }
-
-  updateCustomer(id, customerData) {
-    return this.patch(`customers/${id}`, customerData);
-  }
-
-  deleteCustomer(id) {
-    return this.delete(`customers/${id}`);
-  }
-
+  
   // Orders
-
   createOrder(orderData) {
     return this.post('orders', orderData);
   }
@@ -48,7 +34,6 @@ export class ApiService extends HttpService {
   }
 
   // Masters
-
   createMaster(masterData) {
     return this.post('staff', masterData);
   }
@@ -57,16 +42,11 @@ export class ApiService extends HttpService {
     return this.get('staff');
   }
 
-  updateMaster(id, masterData) {
-    return this.patch(`staff/${id}`, masterData);
-}
-
   deleteMaster(id) {
       return this.delete(`staff/${id}`);
   }
 
   // Services
-
   readServices() {
       return this.get('services');
   }  

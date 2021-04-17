@@ -31,12 +31,16 @@ export default function Customers({ orders, onNew, onUpdate, onEdit, onDelete })
         )
     }
 
+    const onImageError = (e, ...rest) => {
+        e.target.src='/no-photo.jpg';
+    }
+
     const masterBodyTemplate = (rowData) => {
         return (
             <React.Fragment>
                 <span className="p-column-title">Мастер:</span>
                 <div className="p-d-flex p-ai-center">
-                    <div className=""><Avatar size="large" shape="circle" image={rowData.master?.photo} /></div>
+                    <div className=""><Avatar size="large" shape="circle" image={rowData.master?.photo || '/no-photo.jpg'} onImageError={onImageError} /></div>
                     <div className="p-ml-1">
                         <div className="">{rowData.master?.fullName}</div>
                         <div className="p-text-light">{rowData.master?.position}</div>
@@ -49,7 +53,7 @@ export default function Customers({ orders, onNew, onUpdate, onEdit, onDelete })
     const serviceBodyTemplate = (rowData) => {
         return (
             <React.Fragment>
-                <span className="p-column-title">Service:</span>
+                <span className="p-column-title">Услуга:</span>
                 {rowData.service && <div className="p-d-flex p-ai-center">
                     <div className="p-ml-1">
                         <div className="">{rowData.service?.name}</div>
@@ -61,12 +65,12 @@ export default function Customers({ orders, onNew, onUpdate, onEdit, onDelete })
     }
 
     const visitDateBodyTemplate = (rowData) => {
-        const optionsForDate = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+        const optionsForDate = { year: 'numeric', month: 'short', day: 'numeric' };
         const intlDate = new Intl.DateTimeFormat('ru-RU', optionsForDate);
 
         return (
             <React.Fragment>
-                <span className="p-column-title">Visit date:</span>
+                <span className="p-column-title">Дата визита:</span>
                 <div>{intlDate.format(rowData.visitDate)}</div>
             </React.Fragment>
         )
@@ -75,7 +79,7 @@ export default function Customers({ orders, onNew, onUpdate, onEdit, onDelete })
     const statusBodyTemplate = (rowData) => {
         return (
             <React.Fragment>
-                <span className="p-column-title">Status:</span>
+                <span className="p-column-title">Статус:</span>
                 <div>
                     <span className={`order-badge status-${rowData.status.toLowerCase()}-${rowData.finishStatus?.toLowerCase()}`}>
                         {rowData.status}
@@ -104,8 +108,6 @@ export default function Customers({ orders, onNew, onUpdate, onEdit, onDelete })
         </div>
     );
 
-    // Дата
-
     const filterDate = (value, filter) => {
         if (filter.from && filter.to) {
             return filter.from <= value && value <= filter.to;
@@ -116,7 +118,6 @@ export default function Customers({ orders, onNew, onUpdate, onEdit, onDelete })
         else if (filter.to) {
             return value <= filter.to;
         }
-        // Both values are null, allowing.
         return true;
     }
 
@@ -147,9 +148,6 @@ export default function Customers({ orders, onNew, onUpdate, onEdit, onDelete })
             />
         </div>
     );
-
-
-    // Статус
 
     const statuses = ['opened', 'closed'];
 

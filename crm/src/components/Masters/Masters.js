@@ -6,7 +6,7 @@ import { Button } from 'primereact/button';
 
 import '../../scss/components/DataTable.scss'
 
-export default function Masters({masters, onNew, onUpdate, onEdit, onDelete}) {
+export default function Masters({masters, onNew, onUpdate, onDelete}) {
     const dt = useRef(null);
     
     const fullNameBody = (rowData) => {
@@ -31,15 +31,14 @@ export default function Masters({masters, onNew, onUpdate, onEdit, onDelete}) {
         return (
             <React.Fragment>
                 <span className="p-column-title">Фото:</span>
-                <img src={rowData.photo} onError={(e) => e.target.src='https://terraideas.ru/assets/no-photo-d74b569e8aa86ef4c4ca9a5daff41a16131fa9b7860568755387b734993f46dc.jpg'} alt=""  className="photo" />
+                <img src={rowData.photo} onError={(e) => e.target.src='/no-photo.jpg'} alt=""  className="photo" />
             </React.Fragment>
         );        
     }
 
     const actionBody = (rowData) => {
         return (
-            <div className="actions">
-                <Button icon="pi pi-pencil" className="p-button-success p-mr-2" tooltip="Изменить" onClick={() => onEdit(rowData)} />
+            <div className="actions">                
                 <Button icon="pi pi-trash" className="p-button-warning" tooltip="Удалить" onClick={() => onDelete(rowData)} />
             </div>
         );

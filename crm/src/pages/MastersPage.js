@@ -17,8 +17,7 @@ function MastersPage() {
         patronymic: '',
         surName: '',
         fullName: '',
-        position: '',
-        photo: ''
+        position: ''
     };
 
     const [masters, setMasters] = useState(null);
@@ -46,45 +45,25 @@ function MastersPage() {
     }, []);
 
     const saveMaster = async (newData) => {
-        if (currentMaster.id) {
-            // сохраняем текущего
-            try {
-                let _updateMaster = await ApiService.updateMaster(currentMaster.id, newData);
-                toast.current.show({
-                    severity: 'success', summary: 'Успешно', life: 3000,
-                    detail: `Данные мастера '${_updateMaster.fullName}' изменены`
-                });
-                await fetchData();
-            }
-            catch(err) {
-                const msg = err?.message || 'Unknown server response';
-                toast.current.show({
-                    severity: 'error', summary: 'Ошибка', detail: `Невозможно изменить данные: ${msg}`, life: 5000
-                });
-            }
+        try {
+            let _createMaster = await ApiService.createMaster(newData);
+            toast.current.show({
+                severity: 'success', summary: 'Успешно', life: 3000,
+                detail: `Мастер '${_createMaster.fullName}' создан`
+            });
+            await fetchData();
         }
-        else {
-            // создаём нового
-            try {
-                let _createMaster = await ApiService.createMaster(newData);
-                toast.current.show({
-                    severity: 'success', summary: 'Успешно', life: 3000,
-                    detail: `Мастер '${_createMaster.fullName}' создан`
-                });
-                await fetchData();
-            }
-            catch(err) {
-                const msg = err?.message || 'Unknown server response';
-                toast.current?.show({
-                    severity: 'error', summary: 'Ошибка', detail: `Невозможно создать мастера: ${msg}`, life: 5000
-                });
-            }
+        catch(err) {
+            const msg = err?.message || 'Unknown server response';
+            toast.current?.show({
+                severity: 'error', summary: 'Ошибка', detail: `Невозможно создать мастера: ${msg}`, life: 5000
+            });
         }
         setEditMasterDialog(false);
         setCurrentMaster(emptyMaster);
     }
 
-     const deleteCurrentMaster = async () => {
+    const deleteCurrentMaster = async () => {
         try {
             await ApiService.deleteMaster(currentMaster.id);
             toast.current.show({
@@ -102,14 +81,8 @@ function MastersPage() {
         setCurrentMaster(emptyMaster);
     }
 
-
     const askNewMaster = () => {
         setCurrentMaster(emptyMaster);
-        setEditMasterDialog(true);
-    }
-
-    const askUpdateMaster = (master) => {
-        setCurrentMaster({ ...master });
         setEditMasterDialog(true);
     }
 
@@ -118,14 +91,12 @@ function MastersPage() {
         setDeleteMasterDialog(true);
     }
 
-
     const deleteMasterDialogFooter = (
         <React.Fragment>
             <Button label="Нет" icon="pi pi-times" className="p-button-text" onClick={e => setDeleteMasterDialog(false)} />
             <Button label="Да" icon="pi pi-check" className="p-button-text p-button-danger" onClick={deleteCurrentMaster} />
         </React.Fragment>
     );
-
     
     return (
         <React.Fragment>
@@ -134,8 +105,7 @@ function MastersPage() {
             <Masters
                 masters={masters}
                 onNew={askNewMaster}
-                onUpdate={fetchData}
-                onEdit={askUpdateMaster}
+                onUpdate={fetchData}                
                 onDelete={askDeleteMaster}
             />
 

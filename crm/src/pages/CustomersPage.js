@@ -9,7 +9,6 @@ function CustomersPage() {
     const [customers, setCustomers] = useState(null);
     const toast = useRef(null);
 
-
     const fetchData = async () => {
         try {
             const _customers = await ApiService.readCustomers();

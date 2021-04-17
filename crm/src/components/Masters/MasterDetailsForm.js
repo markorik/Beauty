@@ -24,8 +24,7 @@ export default function MasterDetailsForm({visible, master, onCancel, onSave}) {
             firstName: currentMaster.firstName?.trim(),
             surName: currentMaster.surName?.trim(),
             patronymic: currentMaster.patronymic?.trim(),
-            position: currentMaster.position?.trim(),
-            photo: currentMaster.photo?.trim(),
+            position: currentMaster.position?.trim()
         }
         if (newData.firstName && newData.surName && newData.patronymic && newData.position) {
             onSave(newData);
